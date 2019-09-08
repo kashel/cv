@@ -22,6 +22,13 @@
 		3F5775C72325546300C69A26 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775C62325546300C69A26 /* DataProvider.swift */; };
 		3F5775C9232554C800C69A26 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775C8232554C800C69A26 /* MockDataProvider.swift */; };
 		3F5775CB232555C200C69A26 /* MockDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775CA232555C200C69A26 /* MockDependencyContainer.swift */; };
+		3F5775CF23255AA700C69A26 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F5775CD23255AA700C69A26 /* Lato-Bold.ttf */; };
+		3F5775D023255AA700C69A26 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F5775CE23255AA700C69A26 /* Lato-Regular.ttf */; };
+		3F5775D223255B2C00C69A26 /* TitleValueCellRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775D123255B2C00C69A26 /* TitleValueCellRow.swift */; };
+		3F5775D423255B3F00C69A26 /* TitleValueRowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775D323255B3F00C69A26 /* TitleValueRowBuilder.swift */; };
+		3F5775D823255BC400C69A26 /* View+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775D723255BC400C69A26 /* View+AutoLayout.swift */; };
+		3F5775DA23255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775D923255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift */; };
+		3F5775DC23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775DB23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +70,13 @@
 		3F5775C62325546300C69A26 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		3F5775C8232554C800C69A26 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
 		3F5775CA232555C200C69A26 /* MockDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDependencyContainer.swift; sourceTree = "<group>"; };
+		3F5775CD23255AA700C69A26 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		3F5775CE23255AA700C69A26 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		3F5775D123255B2C00C69A26 /* TitleValueCellRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueCellRow.swift; sourceTree = "<group>"; };
+		3F5775D323255B3F00C69A26 /* TitleValueRowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueRowBuilder.swift; sourceTree = "<group>"; };
+		3F5775D723255BC400C69A26 /* View+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AutoLayout.swift"; sourceTree = "<group>"; };
+		3F5775D923255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewCell+ViewComponentsFactory.swift"; sourceTree = "<group>"; };
+		3F5775DB23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewViewController+ViewComponentsFactory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +127,8 @@
 		3F577587232546B200C69A26 /* cv */ = {
 			isa = PBXGroup;
 			children = (
+				3F5775D623255BB200C69A26 /* Helpers */,
+				3F5775CC23255A8C00C69A26 /* Resources */,
 				3F5775C52325543500C69A26 /* Services */,
 				3F5775BE2325500800C69A26 /* View */,
 				3F5775B623254BC100C69A26 /* Models */,
@@ -124,6 +140,7 @@
 				3F5775B923254D2800C69A26 /* OverviewViewController+ViewModel.swift */,
 				3F5775BB23254D9500C69A26 /* OverviewViewController+SectionOrder.swift */,
 				3F5775CA232555C200C69A26 /* MockDependencyContainer.swift */,
+				3F5775DB23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift */,
 			);
 			path = cv;
 			sourceTree = "<group>";
@@ -160,6 +177,9 @@
 			children = (
 				3F5775BF2325501900C69A26 /* OverviewCell.swift */,
 				3F5775C12325508200C69A26 /* OverviewCell+ViewModel.swift */,
+				3F5775D123255B2C00C69A26 /* TitleValueCellRow.swift */,
+				3F5775D323255B3F00C69A26 /* TitleValueRowBuilder.swift */,
+				3F5775D923255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,6 +191,23 @@
 				3F5775C8232554C800C69A26 /* MockDataProvider.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		3F5775CC23255A8C00C69A26 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F5775CD23255AA700C69A26 /* Lato-Bold.ttf */,
+				3F5775CE23255AA700C69A26 /* Lato-Regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3F5775D623255BB200C69A26 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3F5775D723255BC400C69A26 /* View+AutoLayout.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +315,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F577593232546B500C69A26 /* LaunchScreen.storyboard in Resources */,
+				3F5775CF23255AA700C69A26 /* Lato-Bold.ttf in Resources */,
 				3F577590232546B500C69A26 /* Assets.xcassets in Resources */,
+				3F5775D023255AA700C69A26 /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,8 +343,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F5775C42325513E00C69A26 /* OverviewViewModelMapper.swift in Sources */,
+				3F5775D223255B2C00C69A26 /* TitleValueCellRow.swift in Sources */,
 				3F5775C02325501900C69A26 /* OverviewCell.swift in Sources */,
+				3F5775D823255BC400C69A26 /* View+AutoLayout.swift in Sources */,
+				3F5775D423255B3F00C69A26 /* TitleValueRowBuilder.swift in Sources */,
 				3F5775C9232554C800C69A26 /* MockDataProvider.swift in Sources */,
+				3F5775DA23255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift in Sources */,
+				3F5775DC23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift in Sources */,
 				3F5775CB232555C200C69A26 /* MockDependencyContainer.swift in Sources */,
 				3F57758B232546B200C69A26 /* OverviewViewController.swift in Sources */,
 				3F577589232546B200C69A26 /* AppDelegate.swift in Sources */,
