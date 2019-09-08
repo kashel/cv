@@ -14,6 +14,7 @@ class OverviewViewController: UIViewController {
   private let tableView: UITableView
   private let dataProvider: DataProvider
   private let overviewViewModelMapper: OverviewViewModelMapper
+  private let viewComponentsFactory: ViewComponentsFactory
   private var model: CurriculumVitae? = nil {
     didSet {
       viewModel = model != nil ? overviewViewModelMapper.map(model: model!) : nil
@@ -22,9 +23,10 @@ class OverviewViewController: UIViewController {
   private var viewModel: ViewModel?
   
   init(factory: Factory) {
-    self.tableView = UITableView()
     self.dataProvider = factory.dataProvider
     self.overviewViewModelMapper = factory.overviewViewModelMapper
+    self.viewComponentsFactory = ViewComponentsFactory()
+    self.tableView = viewComponentsFactory.tableView
     super.init(nibName: nil, bundle: nil)
     configure()
   }
@@ -43,6 +45,18 @@ private extension OverviewViewController {
     })
     tableView.dataSource = self
     registerCells()
+  }
+  
+  func setupView() {
+    view.backgroundColor = .white
+    let titleView = viewComponentsFactory.titleView
+    view.addSubview(titleView)
+    titleView.pinToSafeArea(of: view, edges: [.left, .top, .right])
+    
+    view.addSubview(tableView)
+    tableView.pinToSafeArea(of: view, edges: [.bottom])
+    tableView.pinEdges(to: view, offsets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0), edges: [.left, .right])
+    tableView.topAnchor.constraint(equalTo: titleView.bottomAnchor).isActive = true
   }
   
   func registerCells() {
