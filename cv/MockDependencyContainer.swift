@@ -59,3 +59,9 @@ extension MockDependencyContainer: FontsPaletteFactory {
     return DefaultFontsPalette()
   }
 }
+
+extension MockDependencyContainer: MarginsPaletteFactory {
+  var margins: MarginsPalette {
+    return MarginsPalette(defaultSpacing: 16)
+  }
+}

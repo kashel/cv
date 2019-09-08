@@ -10,11 +10,13 @@ import UIKit
 
 extension OverviewViewController {
   struct ViewComponentsFactory {
-    typealias Factory = FontsPaletteFactory
+    typealias Factory = FontsPaletteFactory & MarginsPaletteFactory
     private let fonts: FontsPalette
+    private let margins: MarginsPalette
     
     init(factory: Factory) {
       self.fonts = factory.fonts
+      self.margins = factory.margins
     }
     
     var tableView: UITableView {
@@ -31,7 +33,7 @@ extension OverviewViewController {
       label.text = title
       let wrapper = UIView()
       wrapper.addSubview(label)
-      label.pinEdges(to: wrapper, offsets: UIEdgeInsets(top: 0, left: 0, bottom: -16, right: 0))
+      label.pinEdges(to: wrapper, offsets: UIEdgeInsets(top: 0, left: 0, bottom: -margins.defaultSpacing, right: 0))
       return wrapper
     }
     
@@ -42,7 +44,10 @@ extension OverviewViewController {
       label.text = "Curriculum vitae"
       let wrapper = UIView()
       wrapper.addSubview(label)
-      label.pinEdges(to: wrapper, offsets: UIEdgeInsets(top: 16, left: 16, bottom: -32, right: -16))
+      label.pinEdges(to: wrapper, offsets: UIEdgeInsets(top: margins.defaultSpacing,
+                                                        left: margins.defaultSpacing,
+                                                        bottom: -2 * margins.defaultSpacing,
+                                                        right: -margins.defaultSpacing))
       return wrapper
     }
   }
