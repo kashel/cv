@@ -50,7 +50,17 @@ class DefaultOverviewViewModelMapper: OverviewViewModelMapper {
   }
   
   func map(model: CurriculumVitae) -> OverviewViewController.ViewModel {
-    return OverviewViewController.ViewModel(sections: [mapPersonalInformation(model.personalInformation),
-                                                       mapWorkExperiences(model.workExperiences)])
+    let sections = OverviewViewController.SectionOrder.allCases.map { (order) -> Section? in
+      switch order {
+      case .personalInformation:
+        return mapPersonalInformation(model.personalInformation)
+      case .workExperience:
+        return mapWorkExperiences(model.workExperiences)
+      default:
+        return nil
+      }
+      }.compactMap{ $0 }
+    
+    return OverviewViewController.ViewModel(sections: sections)
   }
 }
