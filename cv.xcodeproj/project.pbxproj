@@ -28,6 +28,7 @@
 		3F5775D423255B3F00C69A26 /* TitleValueRowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775D323255B3F00C69A26 /* TitleValueRowBuilder.swift */; };
 		3F5775D823255BC400C69A26 /* View+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775D723255BC400C69A26 /* View+AutoLayout.swift */; };
 		3F5775DA23255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775D923255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift */; };
+		3F5775DC23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775DB23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		3F5775D323255B3F00C69A26 /* TitleValueRowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueRowBuilder.swift; sourceTree = "<group>"; };
 		3F5775D723255BC400C69A26 /* View+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AutoLayout.swift"; sourceTree = "<group>"; };
 		3F5775D923255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewCell+ViewComponentsFactory.swift"; sourceTree = "<group>"; };
+		3F5775DB23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewViewController+ViewComponentsFactory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				3F5775B923254D2800C69A26 /* OverviewViewController+ViewModel.swift */,
 				3F5775BB23254D9500C69A26 /* OverviewViewController+SectionOrder.swift */,
 				3F5775CA232555C200C69A26 /* MockDependencyContainer.swift */,
+				3F5775DB23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift */,
 			);
 			path = cv;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				3F5775D423255B3F00C69A26 /* TitleValueRowBuilder.swift in Sources */,
 				3F5775C9232554C800C69A26 /* MockDataProvider.swift in Sources */,
 				3F5775DA23255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift in Sources */,
+				3F5775DC23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift in Sources */,
 				3F5775CB232555C200C69A26 /* MockDependencyContainer.swift in Sources */,
 				3F57758B232546B200C69A26 /* OverviewViewController.swift in Sources */,
 				3F577589232546B200C69A26 /* AppDelegate.swift in Sources */,
