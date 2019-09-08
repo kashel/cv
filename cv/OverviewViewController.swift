@@ -13,7 +13,8 @@ class OverviewViewController: UIViewController {
     DataProviderFactory &
     OverviewViewModelMapperFactory &
     OverviewCell.Factory &
-    ViewComponentsFactory.Factory
+    ViewComponentsFactory.Factory &
+    MarginsPaletteFactory
   
   private let tableView: UITableView
   private let dataProvider: DataProvider
@@ -26,6 +27,9 @@ class OverviewViewController: UIViewController {
   }
   private var viewModel: ViewModel?
   private let factory: Factory
+  private var margins: MarginsPalette {
+    return factory.margins
+  }
   
   init(factory: Factory) {
     self.factory = factory
@@ -63,7 +67,8 @@ private extension OverviewViewController {
     
     view.addSubview(tableView)
     tableView.pinToSafeArea(of: view, edges: [.bottom])
-    tableView.pinEdges(to: view, offsets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0), edges: [.left, .right])
+    tableView.pinEdges(to: view, offsets: UIEdgeInsets(top: 0, left: margins.defaultSpacing, bottom: 0, right: 0),
+                       edges: [.left, .right])
     tableView.topAnchor.constraint(equalTo: titleView.bottomAnchor).isActive = true
   }
   

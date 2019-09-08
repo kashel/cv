@@ -61,16 +61,18 @@ class TitleValueRowBuilder {
   }
   
   struct ViewComponentsFactory {
-    typealias Factory = FontsPaletteFactory
+    typealias Factory = FontsPaletteFactory & MarginsPaletteFactory
     private let fonts: FontsPalette
+    private let margins: MarginsPalette
     
     init(factory: Factory) {
       self.fonts = factory.fonts
+      self.margins = factory.margins
     }
     
     var stackView: UIStackView {
       let stack = UIStackView()
-      stack.spacing = 16
+      stack.spacing = margins.defaultSpacing
       return stack
     }
     
