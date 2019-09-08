@@ -9,10 +9,27 @@
 import UIKit
 
 extension UIView {
-  func pinEdges(to other: UIView) {
-    leadingAnchor.constraint(equalTo: other.leadingAnchor).isActive = true
-    trailingAnchor.constraint(equalTo: other.trailingAnchor).isActive = true
-    topAnchor.constraint(equalTo: other.topAnchor).isActive = true
-    bottomAnchor.constraint(equalTo: other.bottomAnchor).isActive = true
+  func pinEdges(to other: UIView, offsets: UIEdgeInsets = .zero, edges: UIRectEdge = .all) {
+    self.translatesAutoresizingMaskIntoConstraints = false
+    if edges.contains(.left) || edges.contains(.all) {
+      let leading = leadingAnchor.constraint(equalTo: other.leadingAnchor)
+      leading.constant = offsets.left
+      leading.isActive = true
+    }
+    if edges.contains(.right) || edges.contains(.all) {
+      let trailing = trailingAnchor.constraint(equalTo: other.trailingAnchor)
+      trailing.constant = offsets.right
+      trailing.isActive = true
+    }
+    if edges.contains(.top) || edges.contains(.all) {
+      let top = topAnchor.constraint(equalTo: other.topAnchor)
+      top.constant = offsets.top
+      top.isActive = true
+    }
+    if edges.contains(.bottom) || edges.contains(.all) {
+      let bottom = bottomAnchor.constraint(equalTo: other.bottomAnchor)
+      bottom.constant = offsets.bottom
+      bottom.isActive = true
+    }
   }
 }
