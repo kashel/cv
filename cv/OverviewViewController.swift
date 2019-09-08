@@ -9,11 +9,16 @@
 import UIKit
 
 class OverviewViewController: UIViewController {
-
+  typealias Factory = DataProviderFactory & OverviewViewModelMapperFactory
+  
   private let tableView: UITableView
-
-  init() {
+  private let dataProvider: DataProvider
+  private let overviewViewModelMapper: OverviewViewModelMapper
+  
+  init(factory: Factory) {
     self.tableView = UITableView()
+    self.dataProvider = factory.dataProvider
+    self.overviewViewModelMapper = factory.overviewViewModelMapper
     super.init(nibName: nil, bundle: nil)
     tableView.dataSource = self
   }
