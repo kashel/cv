@@ -10,7 +10,7 @@ import Foundation
 
 extension OverviewViewController {
   struct ViewModel {
-    typealias Subsection = (title: String, value: String)
+    typealias Subsection = OverviewCell.ViewModel
     struct Section {
       let title: String
       let details: [Subsection]
