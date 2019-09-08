@@ -10,6 +10,13 @@ import UIKit
 
 extension OverviewViewController {
   struct ViewComponentsFactory {
+    typealias Factory = FontsPaletteFactory
+    private let fonts: FontsPalette
+    
+    init(factory: Factory) {
+      self.fonts = factory.fonts
+    }
+    
     var tableView: UITableView {
       let table = UITableView()
       table.separatorStyle = .none
@@ -19,7 +26,7 @@ extension OverviewViewController {
     
     func sectionHeaderWithTitle(_ title: String) -> UIView {
       let label = UILabel()
-      label.font = UIFont(name: "Lato-Regular", size: 12)
+      label.font = fonts.overviewSection
       label.textColor = .gray
       label.text = title
       let wrapper = UIView()
@@ -30,7 +37,7 @@ extension OverviewViewController {
     
     var titleView: UIView {
       let label = UILabel()
-      label.font = UIFont(name: "Lato-Regular", size: 16)
+      label.font = fonts.overviewTitle
       label.textColor = .gray
       label.text = "Curriculum vitae"
       let wrapper = UIView()
