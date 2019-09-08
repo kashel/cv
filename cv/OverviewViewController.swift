@@ -9,12 +9,11 @@
 import UIKit
 
 class OverviewViewController: UIViewController {
-  typealias Factory =
-    DataProviderFactory &
-    OverviewViewModelMapperFactory &
-    OverviewCell.Factory &
-    ViewComponentsFactory.Factory &
-    MarginsPaletteFactory
+  typealias Factory = DataProviderFactory
+    & OverviewViewModelMapperFactory
+    & OverviewCell.Factory
+    & ViewComponentsFactory.Factory
+    & MarginsPaletteFactory
   
   private let tableView: UITableView
   private let dataProvider: DataProvider
@@ -77,6 +76,10 @@ private extension OverviewViewController {
     SectionOrder.allCases.forEach({ unownedSelf.tableView.register(OverviewCell.self,
                                                                    forCellReuseIdentifier: $0.reuseIdentifier) })
   }
+  
+  func modelAssertionFailure() {
+    assertionFailure("Your model used to feed OverviewViewController does not correspond with Sections configuration")
+  }
 }
 
 extension OverviewViewController: UITableViewDataSource {
@@ -92,7 +95,7 @@ extension OverviewViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let section = SectionOrder(rawValue: indexPath.section),
       let cellViewModel = cellViewModelForIndexPath(indexPath) else {
-        assertionFailure("Your view model used to feed OverviewViewController does not correspond with Sections configuration")
+        modelAssertionFailure()
         return UITableViewCell()
     }
     let cell = dequeCellForSection(section)
@@ -116,20 +119,65 @@ extension OverviewViewController: UITableViewDataSource {
 extension OverviewViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     guard let sectionViewModel = viewModel?.sections[section] else {
-      assertionFailure("Your view model used to feed OverviewViewController does not correspond with Sections configuration")
+      modelAssertionFailure()
       return UIView()
     }
     return viewComponentsFactory.sectionHeaderWithTitle(sectionViewModel.title)
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let sectionOrder = SectionOrder(rawValue: indexPath.section),
-    sectionOrder == .workExperience,
-    let workExperiences = model?.workExperiences,
-    let workExperience = workExperiences[optional: indexPath.row] else {
-       return
+    guard let sectionOrder = SectionOrder(rawValue: indexPath.section) else {
+      return
+    }
+    
+    switch sectionOrder {
+    case .workExperience:
+      didSelectWorkExperienceWithIndexPath(indexPath)
+    case .personalInformation:
+      didSelectPersonalInformation()
+    default:
+      return
+    }
+  }
+  
+  private func didSelectWorkExperienceWithIndexPath(_ indexPath: IndexPath) {
+    guard let workExperiences = model?.workExperiences,
+      let workExperience = workExperiences[optional: indexPath.row] else {
+        return
     }
     let details = WorkExperienceDetailsViewController(model: workExperience)
     navigationController?.pushViewController(details, animated: true)
+  }
+  
+  private func didSelectPersonalInformation() {
+    guard let personalInformation = model?.personalInformation else {
+      modelAssertionFailure()
+      return
+    }
+    unowned let unownedSelf = self
+    let contactController = viewComponentsFactory.contactAlertController
+    
+    let phoneAction = UIAlertAction(title: "Make phone call", style: .default) { _ in
+      unownedSelf.handlePhoneActionWithPhone(personalInformation.phone)
+    }
+    let emailAction = UIAlertAction(title: "Email", style: .default) { (action:UIAlertAction) in
+      print("Email action");
+    }
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    
+    contactController.addAction(phoneAction)
+    contactController.addAction(emailAction)
+    contactController.addAction(cancelAction)
+    present(contactController, animated: true, completion: nil)
+  }
+  
+  private func handlePhoneActionWithPhone(_ phone: String) {
+    guard let url = URL(string: "tel://\(phone)"), UIApplication.shared.canOpenURL(url) else {
+      present(viewComponentsFactory.errorAlertWithMessage("Unable to make a phone call"),
+              animated: true,
+              completion: nil)
+      return
+    }
+    UIApplication.shared.open(url)
   }
 }
