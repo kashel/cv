@@ -29,6 +29,7 @@ class OverviewViewController: UIViewController {
     self.tableView = viewComponentsFactory.tableView
     super.init(nibName: nil, bundle: nil)
     configure()
+    setupView()
   }
   
   required init?(coder aDecoder: NSCoder) {
