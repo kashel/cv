@@ -32,4 +32,20 @@ extension UIView {
       bottom.isActive = true
     }
   }
+  
+  func pinToSafeArea(of other: UIView, edges: UIRectEdge) {
+    self.translatesAutoresizingMaskIntoConstraints = false
+    if edges.contains(.left) || edges.contains(.all) {
+      leadingAnchor.constraint(equalTo: other.safeAreaLayoutGuide.leadingAnchor).isActive = true
+    }
+    if edges.contains(.right) || edges.contains(.all) {
+      trailingAnchor.constraint(equalTo: other.safeAreaLayoutGuide.trailingAnchor).isActive = true
+    }
+    if edges.contains(.top) || edges.contains(.all) {
+      topAnchor.constraint(equalTo: other.safeAreaLayoutGuide.topAnchor).isActive = true
+    }
+    if edges.contains(.bottom) || edges.contains(.all) {
+      bottomAnchor.constraint(equalTo: other.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+  }
 }
