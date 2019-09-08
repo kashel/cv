@@ -17,3 +17,20 @@ extension OverviewViewController {
     case summary
   }
 }
+
+extension OverviewViewController.SectionOrder {
+  var reuseIdentifier: String {
+    switch self {
+    case .personalInformation:
+      return "personalInformation"
+    case .workExperience:
+      return "workExperience"
+    case .education:
+      return "education"
+    case .skills:
+      return "skills"
+    case .summary:
+      return "summary"
+    }
+  }
+}

@@ -42,6 +42,13 @@ private extension OverviewViewController {
       tableView.reloadData()
     })
     tableView.dataSource = self
+    registerCells()
+  }
+  
+  func registerCells() {
+    unowned let unownedSelf = self
+    SectionOrder.allCases.forEach({ unownedSelf.tableView.register(OverviewCell.self,
+                                                                   forCellReuseIdentifier: $0.reuseIdentifier) })
   }
 }
 
