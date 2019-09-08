@@ -20,6 +20,7 @@
 		3F5775C22325508200C69A26 /* OverviewCell+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775C12325508200C69A26 /* OverviewCell+ViewModel.swift */; };
 		3F5775C42325513E00C69A26 /* OverviewViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775C32325513E00C69A26 /* OverviewViewModelMapper.swift */; };
 		3F5775C72325546300C69A26 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775C62325546300C69A26 /* DataProvider.swift */; };
+		3F5775C9232554C800C69A26 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775C8232554C800C69A26 /* MockDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		3F5775C12325508200C69A26 /* OverviewCell+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewCell+ViewModel.swift"; sourceTree = "<group>"; };
 		3F5775C32325513E00C69A26 /* OverviewViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModelMapper.swift; sourceTree = "<group>"; };
 		3F5775C62325546300C69A26 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		3F5775C8232554C800C69A26 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				3F5775C62325546300C69A26 /* DataProvider.swift */,
+				3F5775C8232554C800C69A26 /* MockDataProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			files = (
 				3F5775C42325513E00C69A26 /* OverviewViewModelMapper.swift in Sources */,
 				3F5775C02325501900C69A26 /* OverviewCell.swift in Sources */,
+				3F5775C9232554C800C69A26 /* MockDataProvider.swift in Sources */,
 				3F57758B232546B200C69A26 /* OverviewViewController.swift in Sources */,
 				3F577589232546B200C69A26 /* AppDelegate.swift in Sources */,
 				3F5775BA23254D2800C69A26 /* OverviewViewController+ViewModel.swift in Sources */,
