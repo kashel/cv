@@ -53,3 +53,9 @@ extension MockDependencyContainer: OverviewViewModelMapperFactory {
     return DefaultOverviewViewModelMapper()
   }
 }
+
+extension MockDependencyContainer: FontsPaletteFactory {
+  var fonts: FontsPalette {
+    return DefaultFontsPalette()
+  }
+}

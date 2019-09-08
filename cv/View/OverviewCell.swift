@@ -11,11 +11,8 @@ import UIKit
 class OverviewCell: UITableViewCell {
   private var rows: [TitleValueCellRow] = []
   private var isSetupFinished: Bool = false
-  
-  init() {
-    super.init(style: .default, reuseIdentifier: "")
-  }
-  
+  typealias Factory = ViewComponentsFactory.Factory
+
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
   }
@@ -24,18 +21,18 @@ class OverviewCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func configureWithViewModel(_ viewModel: ViewModel) {
-    setupIfNeeded(viewModel: viewModel)
+  func configureWithViewModel(_ viewModel: ViewModel, factory: Factory) {
+    setupIfNeeded(viewModel: viewModel, factory: factory)
     for (index, rowViewModel) in viewModel.rows.enumerated() {
       rows[index].configure(value: rowViewModel.value)
     }
   }
   
-  func setupIfNeeded(viewModel: ViewModel) {
+  func setupIfNeeded(viewModel: ViewModel, factory: Factory) {
     guard !isSetupFinished else {
       return
     }
-    let components = ViewComponentsFactory()
+    let components = ViewComponentsFactory(factory: factory)
     rows = components.rowsWithViewModel(viewModel)
     let stack = components.stackViewWithArrangedSubviews(rows)
     addSubview(stack)

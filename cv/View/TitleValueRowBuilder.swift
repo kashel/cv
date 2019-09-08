@@ -15,8 +15,14 @@ struct TitleValueRowConfigOptions: OptionSet {
 }
 
 class TitleValueRowBuilder {
+  typealias Factory = ViewComponentsFactory.Factory
   var cellOptions: TitleValueRowConfigOptions = []
   var titleText: String?
+  private let components: ViewComponentsFactory
+  
+  init(factory: Factory) {
+    self.components = ViewComponentsFactory(factory: factory)
+  }
   
   func addTitle(titleText: String) -> Self {
     self.titleText = titleText
@@ -30,7 +36,6 @@ class TitleValueRowBuilder {
   }
   
   func build() -> TitleValueCellRow {
-    let components = ViewComponentsFactory()
     let stack = components.stackView
     var titleLabel: UILabel? = nil
     if cellOptions.contains(.hasTitle) {
@@ -56,6 +61,13 @@ class TitleValueRowBuilder {
   }
   
   struct ViewComponentsFactory {
+    typealias Factory = FontsPaletteFactory
+    private let fonts: FontsPalette
+    
+    init(factory: Factory) {
+      self.fonts = factory.fonts
+    }
+    
     var stackView: UIStackView {
       let stack = UIStackView()
       stack.spacing = 16
@@ -64,7 +76,7 @@ class TitleValueRowBuilder {
     
     var title: UILabel {
       let label = UILabel()
-      label.font = UIFont(name: "Lato-Bold", size: 12)
+      label.font = fonts.cellTitle
       label.textColor = .gray
       label.textAlignment = .right
       return label
@@ -72,7 +84,7 @@ class TitleValueRowBuilder {
     
     var value: UILabel {
       let label = UILabel()
-      label.font = UIFont(name: "Lato-Regular", size: 12)
+      label.font = fonts.cellValue
       label.textColor = .gray
       label.textAlignment = .left
       label.numberOfLines = 0

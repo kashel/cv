@@ -10,6 +10,13 @@ import UIKit
 
 extension OverviewCell {
   struct ViewComponentsFactory {
+    typealias Factory = TitleValueRowBuilder.Factory
+    private let factory: Factory
+    
+    init(factory: Factory) {
+      self.factory = factory
+    }
+    
     struct Margins {
       let spaceBetweenRows: CGFloat
       let leftOffset: CGFloat
@@ -26,9 +33,8 @@ extension OverviewCell {
                      bottomOffset: -32)
     }()
     
-    let titleValueBuilder = TitleValueRowBuilder()
-    
     func rowsWithViewModel(_ viewModel: ViewModel) -> [TitleValueCellRow] {
+      let titleValueBuilder = TitleValueRowBuilder(factory: factory)
       return viewModel.rows.map{ titleValueBuilder.addTitle(titleText: $0.title).addValue().build() }
     }
     

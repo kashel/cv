@@ -29,6 +29,7 @@
 		3F5775D823255BC400C69A26 /* View+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775D723255BC400C69A26 /* View+AutoLayout.swift */; };
 		3F5775DA23255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775D923255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift */; };
 		3F5775DC23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775DB23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift */; };
+		3F5775E02325699200C69A26 /* FontsPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775DF2325699200C69A26 /* FontsPalette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		3F5775D723255BC400C69A26 /* View+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+AutoLayout.swift"; sourceTree = "<group>"; };
 		3F5775D923255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewCell+ViewComponentsFactory.swift"; sourceTree = "<group>"; };
 		3F5775DB23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewViewController+ViewComponentsFactory.swift"; sourceTree = "<group>"; };
+		3F5775DF2325699200C69A26 /* FontsPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsPalette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				3F5775D123255B2C00C69A26 /* TitleValueCellRow.swift */,
 				3F5775D323255B3F00C69A26 /* TitleValueRowBuilder.swift */,
 				3F5775D923255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift */,
+				3F5775DF2325699200C69A26 /* FontsPalette.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5775E02325699200C69A26 /* FontsPalette.swift in Sources */,
 				3F5775C42325513E00C69A26 /* OverviewViewModelMapper.swift in Sources */,
 				3F5775D223255B2C00C69A26 /* TitleValueCellRow.swift in Sources */,
 				3F5775C02325501900C69A26 /* OverviewCell.swift in Sources */,

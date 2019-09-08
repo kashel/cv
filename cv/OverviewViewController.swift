@@ -9,7 +9,11 @@
 import UIKit
 
 class OverviewViewController: UIViewController {
-  typealias Factory = DataProviderFactory & OverviewViewModelMapperFactory
+  typealias Factory =
+    DataProviderFactory &
+    OverviewViewModelMapperFactory &
+    OverviewCell.Factory &
+    ViewComponentsFactory.Factory
   
   private let tableView: UITableView
   private let dataProvider: DataProvider
@@ -21,11 +25,13 @@ class OverviewViewController: UIViewController {
     }
   }
   private var viewModel: ViewModel?
+  private let factory: Factory
   
   init(factory: Factory) {
+    self.factory = factory
     self.dataProvider = factory.dataProvider
     self.overviewViewModelMapper = factory.overviewViewModelMapper
-    self.viewComponentsFactory = ViewComponentsFactory()
+    self.viewComponentsFactory = ViewComponentsFactory(factory: factory)
     self.tableView = viewComponentsFactory.tableView
     super.init(nibName: nil, bundle: nil)
     configure()
@@ -85,7 +91,7 @@ extension OverviewViewController: UITableViewDataSource {
         return UITableViewCell()
     }
     let cell = dequeCellForSection(section)
-    cell.configureWithViewModel(cellViewModel)
+    cell.configureWithViewModel(cellViewModel, factory: factory)
     return cell
   }
   
