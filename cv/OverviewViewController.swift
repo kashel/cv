@@ -72,10 +72,38 @@ extension OverviewViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel?.sections[section].details.count ?? 0
+    let rows = viewModel?.sections[section].details.count ?? 0
+    return rows
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return UITableViewCell()
+    guard let section = SectionOrder(rawValue: indexPath.section),
+      let cellViewModel = cellViewModelForIndexPath(indexPath) else {
+        assertionFailure("Your view model used to feed OverviewViewController does not correspond with Sections configuration")
+        return UITableViewCell()
+    }
+    let cell = dequeCellForSection(section)
+    cell.configureWithViewModel(cellViewModel)
+    return cell
+  }
+  
+  private func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    guard let sectionViewModel = viewModel?.sections[section] else {
+      assertionFailure("Your view model used to feed OverviewViewController does not correspond with Sections configuration")
+      return UIView()
+    }
+    return viewComponentsFactory.sectionHeaderWithTitle(sectionViewModel.title)
+  }
+  
+  private func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 44
+  }
+  
+  private func dequeCellForSection(_ section: SectionOrder) -> OverviewCell {
+    return tableView.dequeueReusableCell(withIdentifier: section.reuseIdentifier) as? OverviewCell ?? OverviewCell()
+  }
+  
+  private func cellViewModelForIndexPath(_ indexPath: IndexPath) -> OverviewCell.ViewModel? {
+    return viewModel?.sections[indexPath.section].details[indexPath.row]
   }
 }
