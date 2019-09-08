@@ -19,6 +19,7 @@
 		3F5775C02325501900C69A26 /* OverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775BF2325501900C69A26 /* OverviewCell.swift */; };
 		3F5775C22325508200C69A26 /* OverviewCell+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775C12325508200C69A26 /* OverviewCell+ViewModel.swift */; };
 		3F5775C42325513E00C69A26 /* OverviewViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775C32325513E00C69A26 /* OverviewViewModelMapper.swift */; };
+		3F5775C72325546300C69A26 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775C62325546300C69A26 /* DataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		3F5775BF2325501900C69A26 /* OverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCell.swift; sourceTree = "<group>"; };
 		3F5775C12325508200C69A26 /* OverviewCell+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewCell+ViewModel.swift"; sourceTree = "<group>"; };
 		3F5775C32325513E00C69A26 /* OverviewViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModelMapper.swift; sourceTree = "<group>"; };
+		3F5775C62325546300C69A26 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		3F577587232546B200C69A26 /* cv */ = {
 			isa = PBXGroup;
 			children = (
+				3F5775C52325543500C69A26 /* Services */,
 				3F5775BE2325500800C69A26 /* View */,
 				3F5775B623254BC100C69A26 /* Models */,
 				3F577588232546B200C69A26 /* AppDelegate.swift */,
@@ -154,6 +157,14 @@
 				3F5775C12325508200C69A26 /* OverviewCell+ViewModel.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3F5775C52325543500C69A26 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3F5775C62325546300C69A26 /* DataProvider.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +303,7 @@
 				3F577589232546B200C69A26 /* AppDelegate.swift in Sources */,
 				3F5775BA23254D2800C69A26 /* OverviewViewController+ViewModel.swift in Sources */,
 				3F5775BC23254D9500C69A26 /* OverviewViewController+SectionOrder.swift in Sources */,
+				3F5775C72325546300C69A26 /* DataProvider.swift in Sources */,
 				3F5775B823254BD900C69A26 /* CurriculumVitae.swift in Sources */,
 				3F5775C22325508200C69A26 /* OverviewCell+ViewModel.swift in Sources */,
 			);
