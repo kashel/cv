@@ -15,6 +15,7 @@
 		3F5775A9232546B600C69A26 /* cvUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775A8232546B600C69A26 /* cvUITests.swift */; };
 		3F5775B823254BD900C69A26 /* CurriculumVitae.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775B723254BD900C69A26 /* CurriculumVitae.swift */; };
 		3F5775BA23254D2800C69A26 /* OverviewViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775B923254D2800C69A26 /* OverviewViewController+ViewModel.swift */; };
+		3F5775BC23254D9500C69A26 /* OverviewViewController+SectionOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775BB23254D9500C69A26 /* OverviewViewController+SectionOrder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3F5775AA232546B600C69A26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F5775B723254BD900C69A26 /* CurriculumVitae.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumVitae.swift; sourceTree = "<group>"; };
 		3F5775B923254D2800C69A26 /* OverviewViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewViewController+ViewModel.swift"; sourceTree = "<group>"; };
+		3F5775BB23254D9500C69A26 /* OverviewViewController+SectionOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewViewController+SectionOrder.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				3F577591232546B500C69A26 /* LaunchScreen.storyboard */,
 				3F577594232546B500C69A26 /* Info.plist */,
 				3F5775B923254D2800C69A26 /* OverviewViewController+ViewModel.swift */,
+				3F5775BB23254D9500C69A26 /* OverviewViewController+SectionOrder.swift */,
 			);
 			path = cv;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				3F57758B232546B200C69A26 /* OverviewViewController.swift in Sources */,
 				3F577589232546B200C69A26 /* AppDelegate.swift in Sources */,
 				3F5775BA23254D2800C69A26 /* OverviewViewController+ViewModel.swift in Sources */,
+				3F5775BC23254D9500C69A26 /* OverviewViewController+SectionOrder.swift in Sources */,
 				3F5775B823254BD900C69A26 /* CurriculumVitae.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
