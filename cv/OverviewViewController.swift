@@ -121,4 +121,15 @@ extension OverviewViewController: UITableViewDelegate {
     }
     return viewComponentsFactory.sectionHeaderWithTitle(sectionViewModel.title)
   }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let sectionOrder = SectionOrder(rawValue: indexPath.section),
+    sectionOrder == .workExperience,
+    let workExperiences = model?.workExperiences,
+    let workExperience = workExperiences[optional: indexPath.row] else {
+       return
+    }
+    let details = WorkExperienceDetailsViewController(model: workExperience)
+    navigationController?.pushViewController(details, animated: true)
+  }
 }
