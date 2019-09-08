@@ -29,6 +29,7 @@ class OverviewCell: UITableViewCell {
   }
   
   func setupIfNeeded(viewModel: ViewModel, factory: Factory) {
+    selectionStyle = .none
     guard !isSetupFinished else {
       return
     }

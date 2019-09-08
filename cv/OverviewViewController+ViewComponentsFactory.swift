@@ -22,7 +22,6 @@ extension OverviewViewController {
     var tableView: UITableView {
       let table = UITableView()
       table.separatorStyle = .none
-      table.allowsSelection = false
       return table
     }
     
