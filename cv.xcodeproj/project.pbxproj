@@ -13,6 +13,7 @@
 		3F577593232546B500C69A26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F577591232546B500C69A26 /* LaunchScreen.storyboard */; };
 		3F57759E232546B600C69A26 /* cvTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57759D232546B600C69A26 /* cvTests.swift */; };
 		3F5775A9232546B600C69A26 /* cvUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775A8232546B600C69A26 /* cvUITests.swift */; };
+		3F5775B823254BD900C69A26 /* CurriculumVitae.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5775B723254BD900C69A26 /* CurriculumVitae.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		3F5775A4232546B600C69A26 /* cvUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cvUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5775A8232546B600C69A26 /* cvUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cvUITests.swift; sourceTree = "<group>"; };
 		3F5775AA232546B600C69A26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F5775B723254BD900C69A26 /* CurriculumVitae.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumVitae.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		3F577587232546B200C69A26 /* cv */ = {
 			isa = PBXGroup;
 			children = (
+				3F5775B623254BC100C69A26 /* Models */,
 				3F577588232546B200C69A26 /* AppDelegate.swift */,
 				3F57758A232546B200C69A26 /* OverviewViewController.swift */,
 				3F57758F232546B500C69A26 /* Assets.xcassets */,
@@ -120,6 +123,14 @@
 				3F5775AA232546B600C69A26 /* Info.plist */,
 			);
 			path = cvUITests;
+			sourceTree = "<group>";
+		};
+		3F5775B623254BC100C69A26 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F5775B723254BD900C69A26 /* CurriculumVitae.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +265,7 @@
 			files = (
 				3F57758B232546B200C69A26 /* OverviewViewController.swift in Sources */,
 				3F577589232546B200C69A26 /* AppDelegate.swift in Sources */,
+				3F5775B823254BD900C69A26 /* CurriculumVitae.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
