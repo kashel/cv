@@ -13,6 +13,6 @@ protocol DataProviderFactory {
 }
 
 protocol DataProvider {
-  typealias LoadCompleted = (CurriculumVitae) -> ()
-  func load(completed: LoadCompleted)
+  typealias LoadCompleted = (Result<CurriculumVitae>) -> ()
+  func loadCV(completed: @escaping LoadCompleted)
 }

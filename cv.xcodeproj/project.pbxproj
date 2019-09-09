@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3F3EF580232693A6001EB4AD /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EF57F232693A6001EB4AD /* MailService.swift */; };
+		3F3EF5822326C434001EB4AD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EF5812326C434001EB4AD /* NetworkService.swift */; };
+		3F3EF5842326CDC0001EB4AD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EF5832326CDC0001EB4AD /* Result.swift */; };
+		3F3EF5862326D1FF001EB4AD /* URLPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EF5852326D1FF001EB4AD /* URLPalette.swift */; };
+		3F3EF58A2326FBC1001EB4AD /* NetworkDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EF5892326FBC1001EB4AD /* NetworkDataProvider.swift */; };
 		3F577589232546B200C69A26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F577588232546B200C69A26 /* AppDelegate.swift */; };
 		3F57758B232546B200C69A26 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57758A232546B200C69A26 /* OverviewViewController.swift */; };
 		3F577590232546B500C69A26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F57758F232546B500C69A26 /* Assets.xcassets */; };
@@ -55,6 +59,10 @@
 
 /* Begin PBXFileReference section */
 		3F3EF57F232693A6001EB4AD /* MailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
+		3F3EF5812326C434001EB4AD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		3F3EF5832326CDC0001EB4AD /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		3F3EF5852326D1FF001EB4AD /* URLPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPalette.swift; sourceTree = "<group>"; };
+		3F3EF5892326FBC1001EB4AD /* NetworkDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataProvider.swift; sourceTree = "<group>"; };
 		3F577585232546B200C69A26 /* cv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F577588232546B200C69A26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F57758A232546B200C69A26 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +160,7 @@
 				3F5775BB23254D9500C69A26 /* OverviewViewController+SectionOrder.swift */,
 				3F5775CA232555C200C69A26 /* MockDependencyContainer.swift */,
 				3F5775DB23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift */,
+				3F3EF5852326D1FF001EB4AD /* URLPalette.swift */,
 			);
 			path = cv;
 			sourceTree = "<group>";
@@ -179,6 +188,7 @@
 			children = (
 				3F5775B723254BD900C69A26 /* CurriculumVitae.swift */,
 				3F5775C32325513E00C69A26 /* OverviewViewModelMapper.swift */,
+				3F3EF5832326CDC0001EB4AD /* Result.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,6 +213,8 @@
 				3F5775C62325546300C69A26 /* DataProvider.swift */,
 				3F5775C8232554C800C69A26 /* MockDataProvider.swift */,
 				3F3EF57F232693A6001EB4AD /* MailService.swift */,
+				3F3EF5812326C434001EB4AD /* NetworkService.swift */,
+				3F3EF5892326FBC1001EB4AD /* NetworkDataProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -365,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F3EF5822326C434001EB4AD /* NetworkService.swift in Sources */,
 				3F5775E02325699200C69A26 /* FontsPalette.swift in Sources */,
 				3F5775C42325513E00C69A26 /* OverviewViewModelMapper.swift in Sources */,
 				3F5775D223255B2C00C69A26 /* TitleValueCellRow.swift in Sources */,
@@ -377,6 +390,7 @@
 				3F5775CB232555C200C69A26 /* MockDependencyContainer.swift in Sources */,
 				3F57758B232546B200C69A26 /* OverviewViewController.swift in Sources */,
 				3F577589232546B200C69A26 /* AppDelegate.swift in Sources */,
+				3F3EF5842326CDC0001EB4AD /* Result.swift in Sources */,
 				3F5775BA23254D2800C69A26 /* OverviewViewController+ViewModel.swift in Sources */,
 				3F5775BC23254D9500C69A26 /* OverviewViewController+SectionOrder.swift in Sources */,
 				3F7FDF992325948B0026E9FB /* Collection+Optional.swift in Sources */,
@@ -384,8 +398,10 @@
 				3F5775B823254BD900C69A26 /* CurriculumVitae.swift in Sources */,
 				3F5775C22325508200C69A26 /* OverviewCell+ViewModel.swift in Sources */,
 				3F3EF580232693A6001EB4AD /* MailService.swift in Sources */,
+				3F3EF5862326D1FF001EB4AD /* URLPalette.swift in Sources */,
 				3F5775E22325880500C69A26 /* MarginsPalette.swift in Sources */,
 				3F7FDF9723258CB60026E9FB /* WorkExperienceDetails.swift in Sources */,
+				3F3EF58A2326FBC1001EB4AD /* NetworkDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
