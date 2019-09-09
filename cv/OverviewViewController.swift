@@ -14,6 +14,7 @@ class OverviewViewController: UIViewController {
     & OverviewCell.Factory
     & ViewComponentsFactory.Factory
     & MarginsPaletteFactory
+    & MailServiceFactory
   
   private let tableView: UITableView
   private let dataProvider: DataProvider
@@ -29,11 +30,13 @@ class OverviewViewController: UIViewController {
   private var margins: MarginsPalette {
     return factory.margins
   }
+  private let mailService: MailService
   
   init(factory: Factory) {
     self.factory = factory
     self.dataProvider = factory.dataProvider
     self.overviewViewModelMapper = factory.overviewViewModelMapper
+    self.mailService = factory.mailService
     self.viewComponentsFactory = ViewComponentsFactory(factory: factory)
     self.tableView = viewComponentsFactory.tableView
     super.init(nibName: nil, bundle: nil)
@@ -160,8 +163,8 @@ extension OverviewViewController: UITableViewDelegate {
     let phoneAction = UIAlertAction(title: "Make phone call", style: .default) { _ in
       unownedSelf.handlePhoneActionWithPhone(personalInformation.phone)
     }
-    let emailAction = UIAlertAction(title: "Email", style: .default) { (action:UIAlertAction) in
-      print("Email action");
+    let emailAction = UIAlertAction(title: "Email", style: .default) { _ in
+      unownedSelf.handleEmailActionWithEmail(personalInformation.email, sourceController: unownedSelf)
     }
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
     
@@ -179,5 +182,12 @@ extension OverviewViewController: UITableViewDelegate {
       return
     }
     UIApplication.shared.open(url)
+  }
+  
+  private func handleEmailActionWithEmail(_ email: String, sourceController: UIViewController) {
+    mailService.sendEmail(recipientAddress: email,
+                          subject: "Job offer",
+                          message: "We like your CV, let's meet each other",
+                          sourceViewController: sourceController)
   }
 }

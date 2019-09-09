@@ -12,6 +12,7 @@ struct PersonalInformation: Decodable {
   let firstName: String
   let lastName: String
   let phone: String
+  let email: String
   let nationality: String
   let dateOfBirth: String
 }

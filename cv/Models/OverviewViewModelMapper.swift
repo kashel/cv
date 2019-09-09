@@ -27,6 +27,7 @@ class DefaultOverviewViewModelMapper: OverviewViewModelMapper {
                    details: [Subsection(hasDetails: false,
                                         rows: [firstNameSurname,
                                                (title: "Phone", value: personalInformation.phone),
+                                               (title: "Email", value: personalInformation.email),
                                                (title: "Nationality", value: personalInformation.nationality),
                                                (title: "Data of Birth", value: personalInformation.dateOfBirth)])])
   }
