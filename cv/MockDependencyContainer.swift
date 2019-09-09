@@ -43,32 +43,41 @@ class MockDependencyContainer {
   }()
 }
 
-extension MockDependencyContainer: DataProviderFactory {
+class DependencyContainer {}
+
+extension DependencyContainer: DataProviderFactory {
   var dataProvider: DataProvider {
-    return MockDataProvider(mockedData: mockCV)
+    return NetworkDataProvider(networkService: URLSessionNetworkService(),
+                               urls: urls)
   }
 }
 
-extension MockDependencyContainer: OverviewViewModelMapperFactory {
+extension DependencyContainer: OverviewViewModelMapperFactory {
   var overviewViewModelMapper: OverviewViewModelMapper {
     return DefaultOverviewViewModelMapper()
   }
 }
 
-extension MockDependencyContainer: FontsPaletteFactory {
+extension DependencyContainer: FontsPaletteFactory {
   var fonts: FontsPalette {
     return DefaultFontsPalette()
   }
 }
 
-extension MockDependencyContainer: MarginsPaletteFactory {
+extension DependencyContainer: MarginsPaletteFactory {
   var margins: MarginsPalette {
     return MarginsPalette(defaultSpacing: 16)
   }
 }
 
-extension MockDependencyContainer: MailServiceFactory {
+extension DependencyContainer: MailServiceFactory {
   var mailService: MailService {
     return DefaultMailService()
+  }
+}
+
+extension DependencyContainer: URLPaletteFactory {
+  var urls: URLPalette {
+    return NetworkURLPalette()
   }
 }

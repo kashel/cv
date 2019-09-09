@@ -52,10 +52,10 @@ class OverviewViewController: UIViewController {
 private extension OverviewViewController {
   func configure() {
     unowned let unownedSelf = self
-    dataProvider.load(completed: {
+    dataProvider.loadCV(completed: {
       if case .success(let cv) = $0 {
         unownedSelf.model = cv
-        tableView.reloadData()
+        unownedSelf.tableView.reloadData()
       }
     })
     tableView.dataSource = self
@@ -89,7 +89,7 @@ private extension OverviewViewController {
 
 extension OverviewViewController: UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
-    return viewModel?.sections.count ?? 1
+    return viewModel?.sections.count ?? 0
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

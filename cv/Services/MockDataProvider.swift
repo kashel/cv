@@ -15,7 +15,8 @@ class MockDataProvider: DataProvider {
     self.mockedData = mockedData
   }
   
-  func load(completed: (Result<CurriculumVitae>) -> ()) {
+  func loadCV(completed: @escaping (Result<CurriculumVitae>) -> ()) {
     completed(.success(mockedData))
   }
 }
+

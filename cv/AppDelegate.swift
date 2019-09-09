@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    let initialViewController = OverviewViewController(factory: MockDependencyContainer())
+    let initialViewController = OverviewViewController(factory: DependencyContainer())
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = UINavigationController(rootViewController: initialViewController)
     window?.makeKeyAndVisible()
