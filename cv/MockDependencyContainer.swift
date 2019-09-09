@@ -13,6 +13,7 @@ class MockDependencyContainer {
     let personalInformation = PersonalInformation(firstName: "John",
                                                   lastName: "Doe",
                                                   phone: "123456789",
+                                                  email: "test@test.com",
                                                   nationality: "english",
                                                   dateOfBirth: "1980")
     
@@ -63,5 +64,11 @@ extension MockDependencyContainer: FontsPaletteFactory {
 extension MockDependencyContainer: MarginsPaletteFactory {
   var margins: MarginsPalette {
     return MarginsPalette(defaultSpacing: 16)
+  }
+}
+
+extension MockDependencyContainer: MailServiceFactory {
+  var mailService: MailService {
+    return DefaultMailService()
   }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3EF580232693A6001EB4AD /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EF57F232693A6001EB4AD /* MailService.swift */; };
 		3F577589232546B200C69A26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F577588232546B200C69A26 /* AppDelegate.swift */; };
 		3F57758B232546B200C69A26 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57758A232546B200C69A26 /* OverviewViewController.swift */; };
 		3F577590232546B500C69A26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F57758F232546B500C69A26 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F3EF57F232693A6001EB4AD /* MailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
 		3F577585232546B200C69A26 /* cv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F577588232546B200C69A26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F57758A232546B200C69A26 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				3F5775C62325546300C69A26 /* DataProvider.swift */,
 				3F5775C8232554C800C69A26 /* MockDataProvider.swift */,
+				3F3EF57F232693A6001EB4AD /* MailService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				3F5775C72325546300C69A26 /* DataProvider.swift in Sources */,
 				3F5775B823254BD900C69A26 /* CurriculumVitae.swift in Sources */,
 				3F5775C22325508200C69A26 /* OverviewCell+ViewModel.swift in Sources */,
+				3F3EF580232693A6001EB4AD /* MailService.swift in Sources */,
 				3F5775E22325880500C69A26 /* MarginsPalette.swift in Sources */,
 				3F7FDF9723258CB60026E9FB /* WorkExperienceDetails.swift in Sources */,
 			);
@@ -549,7 +553,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D838UQ49C4;
+				DEVELOPMENT_TEAM = 2JS29M37VG;
 				INFOPLIST_FILE = cv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -567,7 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D838UQ49C4;
+				DEVELOPMENT_TEAM = 2JS29M37VG;
 				INFOPLIST_FILE = cv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

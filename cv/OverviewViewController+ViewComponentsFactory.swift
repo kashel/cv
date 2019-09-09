@@ -49,5 +49,16 @@ extension OverviewViewController {
                                                         right: -margins.defaultSpacing))
       return wrapper
     }
+    
+    var contactAlertController: UIAlertController {
+      return UIAlertController(title: "Contact me", message: nil, preferredStyle: .actionSheet)
+    }
+    
+    func errorAlertWithMessage(_ message: String) -> UIAlertController {
+      let discardAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+      let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+      alert.addAction(discardAction)
+      return alert
+    }
   }
 }
