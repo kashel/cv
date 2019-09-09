@@ -15,7 +15,7 @@ class MockDataProvider: DataProvider {
     self.mockedData = mockedData
   }
   
-  func load(completed: (CurriculumVitae) -> ()) {
-    completed(mockedData)
+  func load(completed: (Result<CurriculumVitae>) -> ()) {
+    completed(.success(mockedData))
   }
 }

@@ -53,8 +53,10 @@ private extension OverviewViewController {
   func configure() {
     unowned let unownedSelf = self
     dataProvider.load(completed: {
-      unownedSelf.model = $0
-      tableView.reloadData()
+      if case .success(let cv) = $0 {
+        unownedSelf.model = cv
+        tableView.reloadData()
+      }
     })
     tableView.dataSource = self
     tableView.delegate = self

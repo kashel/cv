@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum Result<T>{
-  case success(T)
-  case error(Error)
-}
-
 protocol NetworkService {
   func get<T: Decodable>(url: URL, result: @escaping (Result<T>) -> ())
 }
