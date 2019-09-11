@@ -44,11 +44,32 @@ class DefaultOverviewViewModelMapper: OverviewViewModelMapper {
     
   }
   
-  private func mapWorkExperiences(_ workExperiences: [WorkExperience]) -> Section {
-    unowned let unownedSelf = self
-    return Section(title: "Work Experience",
-                   details: workExperiences.map(unownedSelf.mapWorkExperience))
+  private func mapEducation(_ education: Education) -> Subsection {
+    return Subsection(hasDetails: false,
+                      rows: [(title: "Dates", value: education.dates),
+                             (title: "Qualification", value: education.qualification),
+                             (title: "Principal studies", value: education.studies),
+                             (title: "Institution", value: education.institution)])
   }
+  
+  private func mapSkills(_ skills: Skills) -> Section {
+    let otherLanguages = skills.otherLanguages.joined(separator: ", ")
+    let othersSkills = skills.skills.joined(separator: ", ")
+    return Section(title: "Skills and Competences",
+                   details: [Subsection(hasDetails: false,
+                                       rows: [(title: "Language spoken", value: skills.motherTongue),
+                                              (title: "Other language(s)", value: otherLanguages),
+                                              (title: "Skills", value: othersSkills)])])
+  }
+  
+  private func mapWorkExperiences(_ workExperiences: [WorkExperience]) -> Section {
+    return Section(title: "Work Experience", details: workExperiences.map(mapWorkExperience))
+  }
+  
+  private func mapEducations(_ educations: [Education]) -> Section {
+    return Section(title: "Education and Training", details: educations.map(mapEducation))
+  }
+  
   
   func map(model: CurriculumVitae) -> OverviewViewController.ViewModel {
     let sections = OverviewViewController.SectionOrder.allCases.map { (order) -> Section? in
@@ -57,10 +78,13 @@ class DefaultOverviewViewModelMapper: OverviewViewModelMapper {
         return mapPersonalInformation(model.personalInformation)
       case .workExperience:
         return mapWorkExperiences(model.workExperiences)
-      default:
+      case .education:
+        return mapEducations(model.edutations)
+      case .skills:
+        return mapSkills(model.skills)
+      case .summary:
         return nil
-      }
-      }.compactMap{ $0 }
+      }}.compactMap{ $0 }
     
     return OverviewViewController.ViewModel(sections: sections)
   }
