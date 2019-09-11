@@ -14,4 +14,5 @@ protocol MarginsPaletteFactory {
 
 struct MarginsPalette {
   let defaultSpacing: CGFloat
+  let workExperienceDetailsTitleBottomOffset: CGFloat
 }
