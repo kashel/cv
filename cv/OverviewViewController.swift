@@ -31,6 +31,7 @@ class OverviewViewController: UIViewController {
     return factory.margins
   }
   private let mailService: MailService
+  private lazy var loadingOverlay = viewComponentsFactory.loadingOverlay
   
   init(factory: Factory) {
     self.factory = factory
@@ -40,31 +41,63 @@ class OverviewViewController: UIViewController {
     self.viewComponentsFactory = ViewComponentsFactory(factory: factory)
     self.tableView = viewComponentsFactory.tableView
     super.init(nibName: nil, bundle: nil)
+    view.backgroundColor = .white
     configure()
-    setupView()
+    loadData()
   }
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.setNavigationBarHidden(true, animated: false)
+    super.viewWillAppear(animated)
+  }
 }
 
 private extension OverviewViewController {
-  func configure() {
+  func loadData() {
+    presentLoadingOverlay()
     unowned let unownedSelf = self
-    dataProvider.loadCV(completed: {
-      if case .success(let cv) = $0 {
-        unownedSelf.model = cv
-        unownedSelf.tableView.reloadData()
+    dataProvider.loadCV(completed: { result in
+      DispatchQueue.main.async {
+        if case .success(let cv) = result {
+          unownedSelf.setupView()
+          unownedSelf.model = cv
+        } else {
+          unownedSelf.loadingFailed()
+        }
+        unownedSelf.dismissLoadingOverlay()
       }
     })
+  }
+  
+  func presentLoadingOverlay() {
+    view.addSubview(loadingOverlay)
+    loadingOverlay.pinEdges(to: view)
+  }
+  
+  func dismissLoadingOverlay() {
+    loadingOverlay.removeFromSuperview()
+  }
+  
+  func loadingFailed() {
+    let errorAlert = viewComponentsFactory.errorAlertWithMessage("Loading failed")
+    let retryAction = UIAlertAction(title: "Retry", style: .default) { [unowned self] (_) in
+      self.loadData()
+    }
+    errorAlert.addAction(retryAction)
+    present(errorAlert, animated: true, completion: nil)
+  }
+  
+  func configure() {
     tableView.dataSource = self
     tableView.delegate = self
     registerCells()
   }
   
   func setupView() {
-    view.backgroundColor = .white
     let titleView = viewComponentsFactory.titleView
     view.addSubview(titleView)
     titleView.pinToSafeArea(of: view, edges: [.left, .top, .right])

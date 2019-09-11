@@ -8,7 +8,70 @@
 
 import UIKit
 
+enum Edge {
+  case left
+  case right
+  case top
+  case bottom
+}
+
+enum Axis {
+  case x
+  case y
+}
+
 extension UIView {
+  private func edgeXContraint(of view: UIView, edge: Edge) -> NSLayoutXAxisAnchor? {
+    switch edge {
+    case .left:
+      return view.leadingAnchor
+    case .right:
+      return view.trailingAnchor
+    default:
+      return nil
+    }
+  }
+  
+  private func edgeYContraint(of view: UIView, edge: Edge) -> NSLayoutYAxisAnchor? {
+    switch edge {
+    case .top:
+      return view.topAnchor
+    case .bottom:
+      return view.bottomAnchor
+    default:
+      return nil
+    }
+  }
+  
+  func center(with other: UIView, axis: Axis? = nil) {
+    if let axis = axis, axis == .x {
+      centerXAnchor.constraint(equalTo: other.centerXAnchor).isActive = true
+      return
+    }
+    if let axis = axis, axis == .y {
+      centerYAnchor.constraint(equalTo: other.centerYAnchor).isActive = true
+      return
+    }
+    centerXAnchor.constraint(equalTo: other.centerXAnchor).isActive = true
+    centerYAnchor.constraint(equalTo: other.centerYAnchor).isActive = true
+  }
+  
+  func pinEdge(_ ownEdge: Edge, to other: UIView, edge otherEdge: Edge, offset: CGFloat = 0) {
+    self.translatesAutoresizingMaskIntoConstraints = false
+    var constraint: NSLayoutConstraint? = nil
+    if let ownEdgeAnchor = edgeXContraint(of: self, edge: ownEdge),
+      let otherEdgeAnchor = edgeXContraint(of: other, edge: otherEdge) {
+      constraint = ownEdgeAnchor.constraint(equalTo: otherEdgeAnchor)
+    } else if let ownEdgeAnchor = edgeYContraint(of: self, edge: ownEdge),
+      let otherEdgeAnchor = edgeYContraint(of: other, edge: otherEdge) {
+      constraint = ownEdgeAnchor.constraint(equalTo: otherEdgeAnchor)
+    } else {
+      assertionFailure("Edges must match coordication")
+    }
+    constraint?.constant = offset
+    constraint?.isActive = true
+  }
+  
   func pinEdges(to other: UIView, offsets: UIEdgeInsets = .zero, edges: UIRectEdge = .all) {
     self.translatesAutoresizingMaskIntoConstraints = false
     if edges.contains(.left) || edges.contains(.all) {

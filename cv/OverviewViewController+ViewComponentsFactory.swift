@@ -60,5 +60,35 @@ extension OverviewViewController {
       alert.addAction(discardAction)
       return alert
     }
+    
+    var loadingLabel: UILabel {
+      let label = UILabel()
+      label.textColor = .lightGray
+      label.textAlignment = .center
+      return label
+    }
+    
+    func loadingStackViewWithViews(_ arrangedViews: [UIView]) -> UIStackView {
+      let stack = UIStackView(arrangedSubviews: arrangedViews)
+      stack.axis = .vertical
+      stack.spacing = 16
+      return stack
+    }
+    
+    var loadingOverlay: UIView {
+      let view = UIView()
+      view.backgroundColor = .white
+      let label = loadingLabel
+      label.text = "Loading data"
+      let activityIndicator = UIActivityIndicatorView(style: .gray)
+      let stack = loadingStackViewWithViews([activityIndicator, label])
+      view.translatesAutoresizingMaskIntoConstraints = false
+      stack.translatesAutoresizingMaskIntoConstraints = false
+      view.addSubview(stack)
+      stack.pinEdges(to: view, offsets: .zero, edges: [.left, .right])
+      stack.center(with: view)
+      activityIndicator.startAnimating()
+      return view
+    }
   }
 }
