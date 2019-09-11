@@ -183,7 +183,7 @@ extension OverviewViewController: UITableViewDelegate {
       let workExperience = workExperiences[optional: indexPath.row] else {
         return
     }
-    let details = WorkExperienceDetailsViewController(model: workExperience)
+    let details = WorkExperienceDetailsViewController(model: workExperience, factory: factory)
     navigationController?.pushViewController(details, animated: true)
   }
   

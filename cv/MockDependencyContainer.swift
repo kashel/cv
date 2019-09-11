@@ -66,7 +66,7 @@ extension DependencyContainer: FontsPaletteFactory {
 
 extension DependencyContainer: MarginsPaletteFactory {
   var margins: MarginsPalette {
-    return MarginsPalette(defaultSpacing: 16)
+    return MarginsPalette(defaultSpacing: 16, workExperienceDetailsTitleBottomOffset: 32)
   }
 }
 
