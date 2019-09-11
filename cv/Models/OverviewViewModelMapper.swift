@@ -33,11 +33,9 @@ class DefaultOverviewViewModelMapper: OverviewViewModelMapper {
   }
   
   private func mapWorkExperience(_ workExperience: WorkExperience) -> Subsection {
-    let responsibilities = workExperience.responsibilities.map{ "- \($0)" }.joined(separator: "\n")
     return Subsection(hasDetails: true,
                       rows: [(title: "Dates", value: workExperience.dates),
                              (title: "Position", value: workExperience.position),
-                             (title: "Responsibilities", value: responsibilities),
                              (title: "Employer", value: workExperience.employer),
                              (title: "Address", value: workExperience.address),
                              (title: "Type of Business", value: workExperience.typeOfBusiness)])
