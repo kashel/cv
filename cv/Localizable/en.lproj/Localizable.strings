@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  cv
+
+  Created by Ireneusz Solek on 12/09/2019.
+  Copyright © 2019 Ireneusz Solek. All rights reserved.
+*/
+"personal_information.section_title" = "Personal Information";
+"personal_information.name" = "Name";
+"personal_information.phone" = "Phone";
+"personal_information.email" = "Email";
+"personal_information.nationality" = "Nationality";
+"personal_information.date_of_birth" = "Date of Birth";
+
+"work_experience.section_title" = "Work Experience";
+"work_experience.dates" = "Dates";
+"work_experience.position" = "Position";
+"work_experience.employer" = "Employer";
+"work_experience.address" = "Address";
+"work_experience.type_of_business" = "Type of Business";
+
+"skills.section_title" = "Skills and Competences";
+"skills.language" = "Language spoken";
+"skills.other_languages" = "Other language(s)";
+"skills.skills" = "Skills";
+
+"education.section_title" = "Education and Training";
+"education.dates" = "Dates";
+"education.qualification" = "Qualification";
+"education.studies" = "Principal studies";
+"education.institution" = "Institution";
+
+"data_loading.loading_failed" = "Loading failed";
+"data_loading.retry" = "Retry";
+"data_loading.loading" = "Loading data";
+
+"general.ok" = "OK";
+"general.cancel" = "Cancel";
+"general.curriculum_vitae" = "Curriculum vitae";
+
+"contact.job_offer" = "Job offer";
+"contact.make_phone_call" = "Make phone call";
+"contact.send_email" = "Send email";
+"contact.contact_me" = "Contact me";
+"contact.uneble_to_send_email" = "Unable to send mail";
+"contact.uneble_to_make_phone_call" = "Unable to make phone call";
+"contact.mail_content" = "We like your CV, let's meet each other";

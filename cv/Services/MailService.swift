@@ -34,8 +34,8 @@ class DefaultMailService: NSObject, MailService {
   }
   
   private var unableToSendAlertController: UIAlertController {
-    let controller = UIAlertController(title: "Unable to send mail", message: nil, preferredStyle: .alert)
-    let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+    let controller = UIAlertController(title: L10n.Contact.unableToSendEmail, message: nil, preferredStyle: .alert)
+    let action = UIAlertAction(title: L10n.General.ok, style: .cancel, handler: nil)
     controller.addAction(action)
     return controller
   }

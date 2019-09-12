@@ -83,8 +83,8 @@ private extension OverviewViewController {
   }
   
   func loadingFailed() {
-    let errorAlert = viewComponentsFactory.errorAlertWithMessage("Loading failed")
-    let retryAction = UIAlertAction(title: "Retry", style: .default) { [unowned self] (_) in
+    let errorAlert = viewComponentsFactory.errorAlertWithMessage(L10n.DataLoading.loadingFailed)
+    let retryAction = UIAlertAction(title: L10n.DataLoading.retry, style: .default) { [unowned self] (_) in
       self.loadData()
     }
     errorAlert.addAction(retryAction)
@@ -195,13 +195,13 @@ extension OverviewViewController: UITableViewDelegate {
     unowned let unownedSelf = self
     let contactController = viewComponentsFactory.contactAlertController
     
-    let phoneAction = UIAlertAction(title: "Make phone call", style: .default) { _ in
+    let phoneAction = UIAlertAction(title: L10n.Contact.makePhoneCall, style: .default) { _ in
       unownedSelf.handlePhoneActionWithPhone(personalInformation.phone)
     }
-    let emailAction = UIAlertAction(title: "Email", style: .default) { _ in
+    let emailAction = UIAlertAction(title: L10n.Contact.sendEmail, style: .default) { _ in
       unownedSelf.handleEmailActionWithEmail(personalInformation.email, sourceController: unownedSelf)
     }
-    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    let cancelAction = UIAlertAction(title: L10n.General.cancel, style: .cancel, handler: nil)
     
     contactController.addAction(phoneAction)
     contactController.addAction(emailAction)
@@ -211,7 +211,7 @@ extension OverviewViewController: UITableViewDelegate {
   
   private func handlePhoneActionWithPhone(_ phone: String) {
     guard let url = URL(string: "tel://\(phone)"), UIApplication.shared.canOpenURL(url) else {
-      present(viewComponentsFactory.errorAlertWithMessage("Unable to make a phone call"),
+      present(viewComponentsFactory.errorAlertWithMessage(L10n.Contact.unableToMakePhoneCall),
               animated: true,
               completion: nil)
       return
@@ -221,8 +221,8 @@ extension OverviewViewController: UITableViewDelegate {
   
   private func handleEmailActionWithEmail(_ email: String, sourceController: UIViewController) {
     mailService.sendEmail(recipientAddress: email,
-                          subject: "Job offer",
-                          message: "We like your CV, let's meet each other",
+                          subject: L10n.Contact.jobOffer,
+                          message: L10n.Contact.mailContent,
                           sourceViewController: sourceController)
   }
 }

@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  cv
+
+  Created by Ireneusz Solek on 12/09/2019.
+  Copyright © 2019 Ireneusz Solek. All rights reserved.
+*/
+"personal_information.section_title" = "Informacje osobiste";
+"personal_information.name" = "Imię / Nazwisko";
+"personal_information.phone" = "Telefon";
+"personal_information.email" = "Email";
+"personal_information.nationality" = "Narodowość";
+"personal_information.date_of_birth" = "Data urodzenia";
+
+"work_experience.section_title" = "Doświadczenie zawodowe";
+"work_experience.dates" = "Okres";
+"work_experience.position" = "Stanowisko";
+"work_experience.employer" = "Pracodawca";
+"work_experience.address" = "Adres";
+"work_experience.type_of_business" = "Branża";
+
+"skills.section_title" = "Umiejętności";
+"skills.language" = "Język ojczysty";
+"skills.other_languages" = "Języki obce";
+"skills.skills" = "Inne umiejętności";
+
+"education.section_title" = "Edukacja";
+"education.dates" = "Okres";
+"education.qualification" = "Tytuł";
+"education.studies" = "Kierunek";
+"education.institution" = "Uczelnia";
+
+"data_loading.loading_failed" = "Błąd ładowania danych";
+"data_loading.retry" = "Powtórz";
+"data_loading.loading" = "Ładowanie danych";
+
+"general.ok" = "Dobrze";
+"general.cancel" = "Zakończ";
+"general.curriculum_vitae" = "Curriculum vitae";
+
+"contact.job_offer" = "Oferta pracy";
+"contact.make_phone_call" = "Wykonaj telefon";
+"contact.send_email" = "Wyślij wiadomość email";
+"contact.contact_me" = "Skontaktuj się ze mną";
+"contact.uneble_to_send_email" = "Nie można wysłać wiadomości";
+"contact.uneble_to_make_phone_call" = "Nie można wykonać połączenia";
+"contact.mail_content" = "Podoba nam się Twoje CV, spotkajmy się!";
