@@ -40,7 +40,7 @@ extension OverviewViewController {
       let label = UILabel()
       label.font = fonts.overviewTitle
       label.textColor = .gray
-      label.text = "Curriculum vitae"
+      label.text = L10n.General.curriculumVitae
       let wrapper = UIView()
       wrapper.addSubview(label)
       label.pinEdges(to: wrapper, offsets: UIEdgeInsets(top: margins.defaultSpacing,
@@ -51,11 +51,11 @@ extension OverviewViewController {
     }
     
     var contactAlertController: UIAlertController {
-      return UIAlertController(title: "Contact me", message: nil, preferredStyle: .actionSheet)
+      return UIAlertController(title: L10n.Contact.contactMe, message: nil, preferredStyle: .actionSheet)
     }
     
     func errorAlertWithMessage(_ message: String) -> UIAlertController {
-      let discardAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+      let discardAction = UIAlertAction(title: L10n.General.ok, style: .cancel, handler: nil)
       let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
       alert.addAction(discardAction)
       return alert
@@ -79,7 +79,7 @@ extension OverviewViewController {
       let view = UIView()
       view.backgroundColor = .white
       let label = loadingLabel
-      label.text = "Loading data"
+      label.text = L10n.DataLoading.loading
       let activityIndicator = UIActivityIndicatorView(style: .gray)
       let stack = loadingStackViewWithViews([activityIndicator, label])
       view.translatesAutoresizingMaskIntoConstraints = false
