@@ -40,6 +40,7 @@
 		3F6A195A232ADC970031B57D /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A1959232ADC970031B57D /* Localizable.swift */; };
 		3F7FDF9723258CB60026E9FB /* WorkExperienceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7FDF9623258CB60026E9FB /* WorkExperienceDetails.swift */; };
 		3F7FDF992325948B0026E9FB /* Collection+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7FDF982325948B0026E9FB /* Collection+Optional.swift */; };
+		3FA2D696232C253B007C63DD /* overviewViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D695232C253B007C63DD /* overviewViewModelMapperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		3F6A1959232ADC970031B57D /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		3F7FDF9623258CB60026E9FB /* WorkExperienceDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkExperienceDetails.swift; sourceTree = "<group>"; };
 		3F7FDF982325948B0026E9FB /* Collection+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Optional.swift"; sourceTree = "<group>"; };
+		3FA2D695232C253B007C63DD /* overviewViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = overviewViewModelMapperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			children = (
 				3F57759D232546B600C69A26 /* networkDataProviderTests.swift */,
 				3F57759F232546B600C69A26 /* Info.plist */,
+				3FA2D695232C253B007C63DD /* overviewViewModelMapperTests.swift */,
 			);
 			path = cvTests;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA2D696232C253B007C63DD /* overviewViewModelMapperTests.swift in Sources */,
 				3F57759E232546B600C69A26 /* networkDataProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
