@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MockDependencyContainer {
+final class MockDependencyContainer {
   private let liveDependencyContainer = DependencyContainer()
 }
 
@@ -57,14 +57,14 @@ extension MockDependencyContainer: OverviewViewModelMapperFactory {
   }
 }
 
-extension MockDependencyContainer: FontsPaletteFactory {
-  var fonts: FontsPalette {
+extension MockDependencyContainer: FontsPanelFactory {
+  var fonts: FontsPanel {
     return self.liveDependencyContainer.fonts
   }
 }
 
-extension MockDependencyContainer: MarginsPaletteFactory {
-  var margins: MarginsPalette {
+extension MockDependencyContainer: MarginsPanelFactory {
+  var margins: MarginsPanel {
     return liveDependencyContainer.margins
   }
 }
@@ -75,8 +75,8 @@ extension MockDependencyContainer: MailServiceFactory {
   }
 }
 
-extension MockDependencyContainer: URLPaletteFactory {
-  var urls: URLPalette {
+extension MockDependencyContainer: URLPanelFactory {
+  var urls: URLPanel {
     return liveDependencyContainer.urls
   }
 }

@@ -1,5 +1,5 @@
 //
-//  MarginsPalette.swift
+//  MarginsPanel.swift
 //  cv
 //
 //  Created by Ireneusz Solek on 08/09/2019.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol MarginsPaletteFactory {
-  var margins: MarginsPalette { get }
+protocol MarginsPanelFactory {
+  var margins: MarginsPanel { get }
 }
 
-struct MarginsPalette {
+struct MarginsPanel {
   let defaultSpacing: CGFloat
   let workExperienceDetailsTitleBottomOffset: CGFloat
 }

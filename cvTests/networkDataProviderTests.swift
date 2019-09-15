@@ -9,7 +9,7 @@
 import XCTest
 @testable import cv
 
-class MockCVNetworkService: NetworkService {
+final class MockCVNetworkService: NetworkService {
   private let cv: CurriculumVitae
   
   init(cv: CurriculumVitae) {
@@ -23,7 +23,7 @@ class MockCVNetworkService: NetworkService {
   }
 }
 
-class MockNetworkErrorService: NetworkService {
+final class MockNetworkErrorService: NetworkService {
   enum MockError: Error {
     case someError
   }
@@ -39,7 +39,7 @@ class MockNetworkErrorService: NetworkService {
   }
 }
 
-class testNetworkDataProvider: XCTestCase {
+final class testNetworkDataProvider: XCTestCase {
   
   private let mockCV: CurriculumVitae = {
     let personalInformation = PersonalInformation(firstName: "John",
@@ -76,8 +76,8 @@ class testNetworkDataProvider: XCTestCase {
   
   func testSuccessResult() {
     let mockNetworkService = MockCVNetworkService(cv: mockCV)
-    let urlPalette = NetworkURLPalette()
-    let dataProvider = NetworkDataProvider(networkService: mockNetworkService, urls: urlPalette)
+    let urlPanel = NetworkURLPanel()
+    let dataProvider = NetworkDataProvider(networkService: mockNetworkService, urls: urlPanel)
     var response: Result<CurriculumVitae>?
     dataProvider.loadCV { response = $0 }
     XCTAssert({
@@ -90,8 +90,8 @@ class testNetworkDataProvider: XCTestCase {
   
   func testErrorResult() {
     let mockErrorService = MockNetworkErrorService(error: MockNetworkErrorService.MockError.someError)
-    let urlPalette = NetworkURLPalette()
-    let dataProvider = NetworkDataProvider(networkService: mockErrorService, urls: urlPalette)
+    let urlPanel = NetworkURLPanel()
+    let dataProvider = NetworkDataProvider(networkService: mockErrorService, urls: urlPanel)
     var response: Result<CurriculumVitae>?
     dataProvider.loadCV { response = $0 }
     XCTAssert({

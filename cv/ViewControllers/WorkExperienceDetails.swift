@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkExperienceDetailsViewModelMapper {
+final class WorkExperienceDetailsViewModelMapper {
   func map(model: WorkExperience) -> WorkExperienceDetailsViewController.ViewModel {
     let title = model.position + " at " + model.employer
     let dateAndCity = model.dates + ", " + model.address
@@ -18,7 +18,7 @@ class WorkExperienceDetailsViewModelMapper {
   }
 }
 
-class WorkExperienceDetailsViewController: UIViewController {
+final class WorkExperienceDetailsViewController: UIViewController {
   struct ViewModel {
     let title: String
     let dateAndCity: String
@@ -69,9 +69,9 @@ class WorkExperienceDetailsViewController: UIViewController {
 
 extension WorkExperienceDetailsViewController {
   struct ViewComponentsFactory {
-    typealias Factory = FontsPaletteFactory & MarginsPaletteFactory
-    private let fonts: FontsPalette
-    private let margins: MarginsPalette
+    typealias Factory = FontsPanelFactory & MarginsPanelFactory
+    private let fonts: FontsPanel
+    private let margins: MarginsPanel
     
     init(factory: Factory) {
       self.fonts = factory.fonts

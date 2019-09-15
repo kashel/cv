@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MockDataProvider: DataProvider {
+final class MockDataProvider: DataProvider {
   private let mockedData: CurriculumVitae
   
   init(mockedData: CurriculumVitae) {

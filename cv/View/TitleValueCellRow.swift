@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TitleValueCellRow: UIView {
+final class TitleValueCellRow: UIView {
   let value: UILabel?
   
   init(value: UILabel?) {

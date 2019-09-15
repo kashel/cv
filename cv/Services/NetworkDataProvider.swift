@@ -8,11 +8,11 @@
 
 import Foundation
 
-class NetworkDataProvider: DataProvider {
+final class NetworkDataProvider: DataProvider {
   private let networkService: NetworkService
-  private let urls: URLPalette
+  private let urls: URLPanel
   
-  init(networkService: NetworkService, urls: URLPalette) {
+  init(networkService: NetworkService, urls: URLPanel) {
     self.networkService = networkService
     self.urls = urls
   }

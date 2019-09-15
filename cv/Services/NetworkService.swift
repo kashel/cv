@@ -20,7 +20,7 @@ enum NetworkError: Error {
   case emptyResponse
 }
 
-class URLSessionNetworkService: NetworkService {
+final class URLSessionNetworkService: NetworkService {
   func get<T: Decodable>(url: URL, result: @escaping (Result<T>) -> ()) {
     let session = URLSession.shared
     let task = session.dataTask(with: url) { (data, response, error) in

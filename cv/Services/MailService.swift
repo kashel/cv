@@ -17,7 +17,7 @@ protocol MailService {
   func sendEmail(recipientAddress: String, subject: String, message: String, sourceViewController: UIViewController)
 }
 
-class DefaultMailService: NSObject, MailService {
+final class DefaultMailService: NSObject, MailService {
   private weak var sourceViewController: UIViewController?
   func sendEmail(recipientAddress: String, subject: String, message: String, sourceViewController: UIViewController) {
     self.sourceViewController = sourceViewController

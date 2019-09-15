@@ -1,5 +1,5 @@
 //
-//  URLPalette.swift
+//  URLPanel.swift
 //  cv
 //
 //  Created by Ireneusz Solek on 09/09/2019.
@@ -8,15 +8,15 @@
 
 import Foundation
 
-protocol URLPaletteFactory {
-  var urls: URLPalette { get }
+protocol URLPanelFactory {
+  var urls: URLPanel { get }
 }
 
-protocol URLPalette {
+protocol URLPanel {
   var cv: URL { get }
 }
 
-struct NetworkURLPalette: URLPalette {
+struct NetworkURLPanel: URLPanel {
   var cv: URL {
     let urlString = "https://gist.githubusercontent.com/kashel/4819ef997a765919b2484ca675c8c370/raw/0b8f4bcaf93bd94e1c9a1657602b32a9df8ba094/gistfile1.txt"
     guard let url = URL(string: urlString) else {

@@ -9,7 +9,7 @@
 import XCTest
 @testable import cv
 
-class overviewViewModelMapperTests: XCTestCase {
+final class overviewViewModelMapperTests: XCTestCase {
   func generateWorkExperienceArray(capacity: UInt ) -> [WorkExperience] {
     return (1 ... capacity).map { _ in
       WorkExperience(dates: "",
