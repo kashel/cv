@@ -16,7 +16,7 @@ class OverviewViewController: UIViewController {
     & MarginsPaletteFactory
     & MailServiceFactory
   
-  private let tableView: UITableView
+  let tableView: UITableView
   private let dataProvider: DataProvider
   private let overviewViewModelMapper: OverviewViewModelMapper
   private let viewComponentsFactory: ViewComponentsFactory
@@ -25,8 +25,8 @@ class OverviewViewController: UIViewController {
       viewModel = model != nil ? overviewViewModelMapper.map(model: model!) : nil
     }
   }
-  private var viewModel: ViewModel?
-  private let factory: Factory
+  var viewModel: ViewModel?
+  let factory: Factory
   private var margins: MarginsPalette {
     return factory.margins
   }
@@ -53,6 +53,12 @@ class OverviewViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.setNavigationBarHidden(true, animated: false)
     super.viewWillAppear(animated)
+  }
+}
+
+extension OverviewViewController {
+  func modelAssertionFailure() {
+    assertionFailure("Your model used to feed OverviewViewController does not correspond with Sections configuration")
   }
 }
 
@@ -113,44 +119,6 @@ private extension OverviewViewController {
     unowned let unownedSelf = self
     SectionOrder.allCases.forEach({ unownedSelf.tableView.register(OverviewCell.self,
                                                                    forCellReuseIdentifier: $0.reuseIdentifier) })
-  }
-  
-  func modelAssertionFailure() {
-    assertionFailure("Your model used to feed OverviewViewController does not correspond with Sections configuration")
-  }
-}
-
-extension OverviewViewController: UITableViewDataSource {
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return viewModel?.sections.count ?? 0
-  }
-  
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    let rows = viewModel?.sections[section].details.count ?? 0
-    return rows
-  }
-  
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let section = SectionOrder(rawValue: indexPath.section),
-      let cellViewModel = cellViewModelForIndexPath(indexPath) else {
-        modelAssertionFailure()
-        return UITableViewCell()
-    }
-    let cell = dequeCellForSection(section)
-    cell.configureWithViewModel(cellViewModel, factory: factory)
-    return cell
-  }
-  
-  private func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return 44
-  }
-  
-  private func dequeCellForSection(_ section: SectionOrder) -> OverviewCell {
-    return tableView.dequeueReusableCell(withIdentifier: section.reuseIdentifier) as? OverviewCell ?? OverviewCell()
-  }
-  
-  private func cellViewModelForIndexPath(_ indexPath: IndexPath) -> OverviewCell.ViewModel? {
-    return viewModel?.sections[indexPath.section].details[indexPath.row]
   }
 }
 

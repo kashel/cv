@@ -45,6 +45,7 @@
 		3FA2D69D232D95C3007C63DD /* CVLaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D69C232D95C3007C63DD /* CVLaunchArgument.swift */; };
 		3FA2D69E232D95C3007C63DD /* CVLaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D69C232D95C3007C63DD /* CVLaunchArgument.swift */; };
 		3FA2D6A0232ED925007C63DD /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D69F232ED925007C63DD /* DependencyContainer.swift */; };
+		3FA2D6A3232EDCAA007C63DD /* OverviewViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D6A2232EDCAA007C63DD /* OverviewViewController+UITableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		3FA2D69A232D9120007C63DD /* ProcessInfo+Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+Payload.swift"; sourceTree = "<group>"; };
 		3FA2D69C232D95C3007C63DD /* CVLaunchArgument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVLaunchArgument.swift; sourceTree = "<group>"; };
 		3FA2D69F232ED925007C63DD /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		3FA2D6A2232EDCAA007C63DD /* OverviewViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		3F577587232546B200C69A26 /* cv */ = {
 			isa = PBXGroup;
 			children = (
+				3FA2D6A1232EDC2B007C63DD /* OverviewViewController */,
 				3FA2D699232D90F8007C63DD /* Application */,
 				3F6A1958232ADC860031B57D /* Localizable */,
 				3F7FDF9523258C9B0026E9FB /* ViewControllers */,
@@ -169,14 +172,9 @@
 				3F5775BE2325500800C69A26 /* View */,
 				3F5775B623254BC100C69A26 /* Models */,
 				3F577588232546B200C69A26 /* AppDelegate.swift */,
-				3F57758A232546B200C69A26 /* OverviewViewController.swift */,
 				3F57758F232546B500C69A26 /* Assets.xcassets */,
 				3F577591232546B500C69A26 /* LaunchScreen.storyboard */,
 				3F577594232546B500C69A26 /* Info.plist */,
-				3F5775B923254D2800C69A26 /* OverviewViewController+ViewModel.swift */,
-				3F5775BB23254D9500C69A26 /* OverviewViewController+SectionOrder.swift */,
-				3F5775DB23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift */,
-				3F3EF5852326D1FF001EB4AD /* URLPalette.swift */,
 			);
 			path = cv;
 			sourceTree = "<group>";
@@ -274,12 +272,25 @@
 		3FA2D699232D90F8007C63DD /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				3F3EF5852326D1FF001EB4AD /* URLPalette.swift */,
 				3F5775CA232555C200C69A26 /* MockDependencyContainer.swift */,
 				3FA2D69A232D9120007C63DD /* ProcessInfo+Payload.swift */,
 				3FA2D69C232D95C3007C63DD /* CVLaunchArgument.swift */,
 				3FA2D69F232ED925007C63DD /* DependencyContainer.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		3FA2D6A1232EDC2B007C63DD /* OverviewViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3F5775B923254D2800C69A26 /* OverviewViewController+ViewModel.swift */,
+				3F5775BB23254D9500C69A26 /* OverviewViewController+SectionOrder.swift */,
+				3F5775DB23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift */,
+				3F57758A232546B200C69A26 /* OverviewViewController.swift */,
+				3FA2D6A2232EDCAA007C63DD /* OverviewViewController+UITableViewDataSource.swift */,
+			);
+			path = OverviewViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +443,7 @@
 				3F57758B232546B200C69A26 /* OverviewViewController.swift in Sources */,
 				3F577589232546B200C69A26 /* AppDelegate.swift in Sources */,
 				3F3EF5842326CDC0001EB4AD /* Result.swift in Sources */,
+				3FA2D6A3232EDCAA007C63DD /* OverviewViewController+UITableViewDataSource.swift in Sources */,
 				3F5775BA23254D2800C69A26 /* OverviewViewController+ViewModel.swift in Sources */,
 				3F5775BC23254D9500C69A26 /* OverviewViewController+SectionOrder.swift in Sources */,
 				3F7FDF992325948B0026E9FB /* Collection+Optional.swift in Sources */,
