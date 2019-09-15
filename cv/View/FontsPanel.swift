@@ -1,5 +1,5 @@
 //
-//  FontsPalette.swift
+//  FontsPanel.swift
 //  cv
 //
 //  Created by Ireneusz Solek on 08/09/2019.
@@ -8,18 +8,18 @@
 
 import UIKit
 
-protocol FontsPaletteFactory {
-  var fonts: FontsPalette { get }
+protocol FontsPanelFactory {
+  var fonts: FontsPanel { get }
 }
 
-protocol FontsPalette {
+protocol FontsPanel {
   var cellTitle: UIFont { get }
   var cellValue: UIFont { get }
   var overviewSection: UIFont { get }
   var overviewTitle: UIFont { get }
 }
 
-struct DefaultFontsPalette: FontsPalette {
+struct DefaultFontsPanel: FontsPanel {
   var cellTitle: UIFont {
     return UIFont(name: "Lato-Bold", size: 12) ?? UIFont.boldSystemFont(ofSize: 12)
   }

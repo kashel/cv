@@ -13,7 +13,7 @@ final class OverviewViewController: UIViewController {
     & OverviewViewModelMapperFactory
     & OverviewCell.Factory
     & ViewComponentsFactory.Factory
-    & MarginsPaletteFactory
+    & MarginsPanelFactory
     & MailServiceFactory
   
   let tableView: UITableView
@@ -27,7 +27,7 @@ final class OverviewViewController: UIViewController {
   }
   var viewModel: ViewModel?
   let factory: Factory
-  private var margins: MarginsPalette {
+  private var margins: MarginsPanel {
     return factory.margins
   }
   let mailService: MailService

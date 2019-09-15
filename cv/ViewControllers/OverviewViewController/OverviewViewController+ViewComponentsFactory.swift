@@ -10,9 +10,9 @@ import UIKit
 
 extension OverviewViewController {
   struct ViewComponentsFactory {
-    typealias Factory = FontsPaletteFactory & MarginsPaletteFactory
-    private let fonts: FontsPalette
-    private let margins: MarginsPalette
+    typealias Factory = FontsPanelFactory & MarginsPanelFactory
+    private let fonts: FontsPanel
+    private let margins: MarginsPanel
     
     init(factory: Factory) {
       self.fonts = factory.fonts

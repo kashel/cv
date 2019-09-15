@@ -23,15 +23,15 @@ extension DependencyContainer: OverviewViewModelMapperFactory {
   }
 }
 
-extension DependencyContainer: FontsPaletteFactory {
-  var fonts: FontsPalette {
-    return DefaultFontsPalette()
+extension DependencyContainer: FontsPanelFactory {
+  var fonts: FontsPanel {
+    return DefaultFontsPanel()
   }
 }
 
-extension DependencyContainer: MarginsPaletteFactory {
-  var margins: MarginsPalette {
-    return MarginsPalette(defaultSpacing: 16, workExperienceDetailsTitleBottomOffset: 32)
+extension DependencyContainer: MarginsPanelFactory {
+  var margins: MarginsPanel {
+    return MarginsPanel(defaultSpacing: 16, workExperienceDetailsTitleBottomOffset: 32)
   }
 }
 
@@ -41,8 +41,8 @@ extension DependencyContainer: MailServiceFactory {
   }
 }
 
-extension DependencyContainer: URLPaletteFactory {
-  var urls: URLPalette {
-    return NetworkURLPalette()
+extension DependencyContainer: URLPanelFactory {
+  var urls: URLPanel {
+    return NetworkURLPanel()
   }
 }

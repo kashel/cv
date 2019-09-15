@@ -76,8 +76,8 @@ final class testNetworkDataProvider: XCTestCase {
   
   func testSuccessResult() {
     let mockNetworkService = MockCVNetworkService(cv: mockCV)
-    let urlPalette = NetworkURLPalette()
-    let dataProvider = NetworkDataProvider(networkService: mockNetworkService, urls: urlPalette)
+    let urlPanel = NetworkURLPanel()
+    let dataProvider = NetworkDataProvider(networkService: mockNetworkService, urls: urlPanel)
     var response: Result<CurriculumVitae>?
     dataProvider.loadCV { response = $0 }
     XCTAssert({
@@ -90,8 +90,8 @@ final class testNetworkDataProvider: XCTestCase {
   
   func testErrorResult() {
     let mockErrorService = MockNetworkErrorService(error: MockNetworkErrorService.MockError.someError)
-    let urlPalette = NetworkURLPalette()
-    let dataProvider = NetworkDataProvider(networkService: mockErrorService, urls: urlPalette)
+    let urlPanel = NetworkURLPanel()
+    let dataProvider = NetworkDataProvider(networkService: mockErrorService, urls: urlPanel)
     var response: Result<CurriculumVitae>?
     dataProvider.loadCV { response = $0 }
     XCTAssert({
