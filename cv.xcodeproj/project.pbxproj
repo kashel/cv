@@ -164,7 +164,6 @@
 		3F577587232546B200C69A26 /* cv */ = {
 			isa = PBXGroup;
 			children = (
-				3FA2D6A1232EDC2B007C63DD /* OverviewViewController */,
 				3FA2D699232D90F8007C63DD /* Application */,
 				3F6A1958232ADC860031B57D /* Localizable */,
 				3F7FDF9523258C9B0026E9FB /* ViewControllers */,
@@ -266,6 +265,7 @@
 		3F7FDF9523258C9B0026E9FB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3FA2D6A1232EDC2B007C63DD /* OverviewViewController */,
 				3F7FDF9623258CB60026E9FB /* WorkExperienceDetails.swift */,
 			);
 			path = ViewControllers;
