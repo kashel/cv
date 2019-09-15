@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PersonalInformation: Decodable {
+struct PersonalInformation: Decodable, Equatable {
   let firstName: String
   let lastName: String
   let phone: String
@@ -17,7 +17,7 @@ struct PersonalInformation: Decodable {
   let dateOfBirth: String
 }
 
-struct WorkExperience: Decodable {
+struct WorkExperience: Decodable, Equatable {
   let dates: String
   let position: String
   let responsibilities: [String]
@@ -26,20 +26,20 @@ struct WorkExperience: Decodable {
   let typeOfBusiness: String
 }
 
-struct Education: Decodable {
+struct Education: Decodable, Equatable {
   let dates: String
   let qualification: String
   let studies: String
   let institution: String
 }
 
-struct Skills: Decodable {
+struct Skills: Decodable, Equatable {
   let motherTongue: String
   let otherLanguages: [String]
   let skills: [String]
 }
 
-struct CurriculumVitae: Decodable {
+struct CurriculumVitae: Decodable, Equatable {
   let personalInformation: PersonalInformation
   let workExperiences: [WorkExperience]
   let edutations: [Education]
