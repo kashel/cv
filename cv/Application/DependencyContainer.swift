@@ -1,8 +1,8 @@
 //
-//  MockDependencyContainer.swift
+//  DependencyContainer.swift
 //  cv
 //
-//  Created by Ireneusz Solek on 08/09/2019.
+//  Created by Ireneusz Solek on 15/09/2019.
 //  Copyright © 2019 Ireneusz Solek. All rights reserved.
 //
 

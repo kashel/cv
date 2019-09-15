@@ -19,35 +19,63 @@ protocol OverviewViewModelMapper {
 class DefaultOverviewViewModelMapper: OverviewViewModelMapper {
   typealias Section = OverviewViewController.ViewModel.Section
   typealias Subsection = OverviewViewController.ViewModel.Subsection
+  typealias Row = Subsection.Row
   
   private func mapPersonalInformation(_ personalInformation: PersonalInformation) -> Section {
     let name = "\(personalInformation.firstName) \(personalInformation.lastName)"
-    let firstNameSurname = (title: L10n.PersonalInformation.name, value: name)
+    let firstNameSurname = Row(title: L10n.PersonalInformation.name,
+                               value: name,
+                               accessibilityIdentifier: "personalInformatio.firstNameSurname")
     return Section(title: L10n.PersonalInformation.sectionTitle,
                    details: [Subsection(hasDetails: false,
                                         rows: [firstNameSurname,
-                                               (title: L10n.PersonalInformation.phone, value: personalInformation.phone),
-                                               (title: L10n.PersonalInformation.email, value: personalInformation.email),
-                                               (title: L10n.PersonalInformation.nationality, value: personalInformation.nationality),
-                                               (title: L10n.PersonalInformation.dateOfBirth, value: personalInformation.dateOfBirth)])])
+                                               Row(title: L10n.PersonalInformation.phone,
+                                                   value: personalInformation.phone,
+                                                   accessibilityIdentifier: "personalInformation.phone"),
+                                               Row(title: L10n.PersonalInformation.email,
+                                                   value: personalInformation.email,
+                                                   accessibilityIdentifier: "personalInformation.email"),
+                                               Row(title: L10n.PersonalInformation.nationality,
+                                                   value: personalInformation.nationality,
+                                                   accessibilityIdentifier: "personalInformation.nationality"),
+                                               Row(title: L10n.PersonalInformation.dateOfBirth,
+                                                   value: personalInformation.dateOfBirth,
+                                                   accessibilityIdentifier: "personalInformation.dateOfBirth")])])
   }
   
   private func mapWorkExperience(_ workExperience: WorkExperience) -> Subsection {
     return Subsection(hasDetails: true,
-                      rows: [(title: L10n.WorkExperience.dates, value: workExperience.dates),
-                             (title: L10n.WorkExperience.position, value: workExperience.position),
-                             (title: L10n.WorkExperience.employer, value: workExperience.employer),
-                             (title: L10n.WorkExperience.address, value: workExperience.address),
-                             (title: L10n.WorkExperience.typeOfBusiness, value: workExperience.typeOfBusiness)])
-    
+                      rows: [Row(title: L10n.WorkExperience.dates,
+                                 value: workExperience.dates,
+                                 accessibilityIdentifier: "workExperience.dates"),
+                             Row(title: L10n.WorkExperience.position,
+                                 value: workExperience.position,
+                                 accessibilityIdentifier: "workExperience.position"),
+                             Row(title: L10n.WorkExperience.employer,
+                                 value: workExperience.employer,
+                                 accessibilityIdentifier: "workExperience.employer"),
+                             Row(title: L10n.WorkExperience.address,
+                                 value: workExperience.address,
+                                 accessibilityIdentifier: "workExperience.address"),
+                             Row(title: L10n.WorkExperience.typeOfBusiness,
+                                 value: workExperience.typeOfBusiness,
+                                 accessibilityIdentifier: "workExperience.typeOfBusiness")])
   }
   
   private func mapEducation(_ education: Education) -> Subsection {
     return Subsection(hasDetails: false,
-                      rows: [(title: L10n.Education.dates, value: education.dates),
-                             (title: L10n.Education.qualification, value: education.qualification),
-                             (title: L10n.Education.studies, value: education.studies),
-                             (title: L10n.Education.institution, value: education.institution)])
+                      rows: [Row(title: L10n.Education.dates,
+                                 value: education.dates,
+                                 accessibilityIdentifier:"education.dates"),
+                             Row(title: L10n.Education.qualification,
+                                 value: education.qualification,
+                                 accessibilityIdentifier:"education.qualification"),
+                             Row(title: L10n.Education.studies,
+                                 value: education.studies,
+                                 accessibilityIdentifier:"education.studies"),
+                             Row(title: L10n.Education.institution,
+                                 value: education.institution,
+                                 accessibilityIdentifier:"education.institution")])
   }
   
   private func mapSkills(_ skills: Skills) -> Section {
@@ -55,9 +83,15 @@ class DefaultOverviewViewModelMapper: OverviewViewModelMapper {
     let othersSkills = skills.skills.joined(separator: ", ")
     return Section(title: L10n.Skills.sectionTitle,
                    details: [Subsection(hasDetails: false,
-                                       rows: [(title: L10n.Skills.language, value: skills.motherTongue),
-                                              (title: L10n.Skills.otherLanguages, value: otherLanguages),
-                                              (title: L10n.Skills.skills, value: othersSkills)])])
+                                        rows: [Row(title: L10n.Skills.language,
+                                                   value: skills.motherTongue,
+                                                   accessibilityIdentifier: "skills.motherTongue"),
+                                               Row(title: L10n.Skills.otherLanguages,
+                                                   value: otherLanguages,
+                                                   accessibilityIdentifier: "skills.otherLanguages"),
+                                               Row(title: L10n.Skills.skills,
+                                                   value: othersSkills,
+                                                   accessibilityIdentifier: "skills.othersSkills")])])
   }
   
   private func mapWorkExperiences(_ workExperiences: [WorkExperience]) -> Section {

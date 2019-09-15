@@ -24,7 +24,8 @@ class OverviewCell: UITableViewCell {
   func configureWithViewModel(_ viewModel: ViewModel, factory: Factory) {
     setupIfNeeded(viewModel: viewModel, factory: factory)
     for (index, rowViewModel) in viewModel.rows.enumerated() {
-      rows[index].configure(value: rowViewModel.value)
+      rows[index].configure(value: rowViewModel.value,
+                            accessibilityIdentifier: rowViewModel.accessibilityIdentifier)
     }
   }
   
