@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NetworkDataProvider: DataProvider {
+final class NetworkDataProvider: DataProvider {
   private let networkService: NetworkService
   private let urls: URLPalette
   

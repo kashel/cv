@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OverviewCell: UITableViewCell {
+final class OverviewCell: UITableViewCell {
   private var rows: [TitleValueCellRow] = []
   private var isSetupFinished: Bool = false
   typealias Factory = ViewComponentsFactory.Factory

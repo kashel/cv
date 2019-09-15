@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MockDependencyContainer {
+final class MockDependencyContainer {
   private let liveDependencyContainer = DependencyContainer()
 }
 

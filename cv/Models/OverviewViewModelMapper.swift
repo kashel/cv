@@ -16,7 +16,7 @@ protocol OverviewViewModelMapper {
   func map(model: CurriculumVitae) -> OverviewViewController.ViewModel
 }
 
-class DefaultOverviewViewModelMapper: OverviewViewModelMapper {
+final class DefaultOverviewViewModelMapper: OverviewViewModelMapper {
   typealias Section = OverviewViewController.ViewModel.Section
   typealias Subsection = OverviewViewController.ViewModel.Subsection
   typealias Row = Subsection.Row

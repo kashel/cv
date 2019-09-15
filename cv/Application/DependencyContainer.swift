@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DependencyContainer {}
+final class DependencyContainer {}
 
 extension DependencyContainer: DataProviderFactory {
   var dataProvider: DataProvider {

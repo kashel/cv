@@ -8,7 +8,7 @@
 
 import XCTest
 
-class cvUITests: XCTestCase {
+final class cvUITests: XCTestCase {
   private let app = XCUIApplication()
   
   override func setUp() {

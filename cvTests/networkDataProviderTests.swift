@@ -9,7 +9,7 @@
 import XCTest
 @testable import cv
 
-class MockCVNetworkService: NetworkService {
+final class MockCVNetworkService: NetworkService {
   private let cv: CurriculumVitae
   
   init(cv: CurriculumVitae) {
@@ -23,7 +23,7 @@ class MockCVNetworkService: NetworkService {
   }
 }
 
-class MockNetworkErrorService: NetworkService {
+final class MockNetworkErrorService: NetworkService {
   enum MockError: Error {
     case someError
   }
@@ -39,7 +39,7 @@ class MockNetworkErrorService: NetworkService {
   }
 }
 
-class testNetworkDataProvider: XCTestCase {
+final class testNetworkDataProvider: XCTestCase {
   
   private let mockCV: CurriculumVitae = {
     let personalInformation = PersonalInformation(firstName: "John",

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OverviewViewController: UIViewController {
+final class OverviewViewController: UIViewController {
   typealias Factory = DataProviderFactory
     & OverviewViewModelMapperFactory
     & OverviewCell.Factory

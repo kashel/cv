@@ -14,7 +14,7 @@ struct TitleValueRowConfigOptions: OptionSet {
   static let hasValue = TitleValueRowConfigOptions(rawValue: 1 << 1)
 }
 
-class TitleValueRowBuilder {
+final class TitleValueRowBuilder {
   typealias Factory = ViewComponentsFactory.Factory
   var cellOptions: TitleValueRowConfigOptions = []
   var titleText: String?
