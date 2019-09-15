@@ -46,6 +46,7 @@
 		3FA2D69E232D95C3007C63DD /* CVLaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D69C232D95C3007C63DD /* CVLaunchArgument.swift */; };
 		3FA2D6A0232ED925007C63DD /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D69F232ED925007C63DD /* DependencyContainer.swift */; };
 		3FA2D6A3232EDCAA007C63DD /* OverviewViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D6A2232EDCAA007C63DD /* OverviewViewController+UITableViewDataSource.swift */; };
+		3FA2D6A5232EDDB6007C63DD /* OverviewViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D6A4232EDDB6007C63DD /* OverviewViewController+UITableViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		3FA2D69C232D95C3007C63DD /* CVLaunchArgument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVLaunchArgument.swift; sourceTree = "<group>"; };
 		3FA2D69F232ED925007C63DD /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		3FA2D6A2232EDCAA007C63DD /* OverviewViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		3FA2D6A4232EDDB6007C63DD /* OverviewViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 				3F5775DB23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift */,
 				3F57758A232546B200C69A26 /* OverviewViewController.swift */,
 				3FA2D6A2232EDCAA007C63DD /* OverviewViewController+UITableViewDataSource.swift */,
+				3FA2D6A4232EDDB6007C63DD /* OverviewViewController+UITableViewDelegate.swift */,
 			);
 			path = OverviewViewController;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				3F5775C9232554C800C69A26 /* MockDataProvider.swift in Sources */,
 				3F5775DA23255D8A00C69A26 /* OverviewCell+ViewComponentsFactory.swift in Sources */,
 				3F5775DC23255FDA00C69A26 /* OverviewViewController+ViewComponentsFactory.swift in Sources */,
+				3FA2D6A5232EDDB6007C63DD /* OverviewViewController+UITableViewDelegate.swift in Sources */,
 				3F5775CB232555C200C69A26 /* MockDependencyContainer.swift in Sources */,
 				3F57758B232546B200C69A26 /* OverviewViewController.swift in Sources */,
 				3F577589232546B200C69A26 /* AppDelegate.swift in Sources */,
