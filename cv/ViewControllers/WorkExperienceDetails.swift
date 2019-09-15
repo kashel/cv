@@ -80,6 +80,7 @@ extension WorkExperienceDetailsViewController {
     
     var titleLabel: UILabel {
       let label = UILabel()
+      label.accessibilityIdentifier = "workExperienceDetails.title"
       label.font = fonts.overviewTitle
       label.textColor = .gray
       return label
@@ -87,6 +88,7 @@ extension WorkExperienceDetailsViewController {
     
     var dateAndCityLabel: UILabel {
       let label = UILabel()
+      label.accessibilityIdentifier = "workExperienceDetails.dateAndCity"
       label.font = fonts.overviewSection
       label.textColor = .lightGray
       return label

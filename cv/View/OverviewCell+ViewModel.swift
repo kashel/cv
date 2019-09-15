@@ -10,7 +10,11 @@ import Foundation
 
 extension OverviewCell {
   struct ViewModel {
-    typealias Row = (title: String, value: String)
+    struct Row {
+      let title: String
+      let value: String
+      let accessibilityIdentifier: String
+    }
     let hasDetails: Bool
     let rows: [Row]
   }

@@ -20,7 +20,8 @@ class TitleValueCellRow: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func configure(value: String?) {
+  func configure(value: String?, accessibilityIdentifier: String?) {
     self.value?.text = value
+    self.value?.accessibilityIdentifier = accessibilityIdentifier
   }
 }
