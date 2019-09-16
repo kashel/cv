@@ -31,6 +31,7 @@ extension OverviewViewController {
       label.textColor = .gray
       label.text = title
       let wrapper = UIView()
+      wrapper.backgroundColor = .white
       wrapper.addSubview(label)
       label.pinEdges(to: wrapper, offsets: UIEdgeInsets(top: 0, left: 0, bottom: -margins.defaultSpacing, right: 0))
       return wrapper
