@@ -109,9 +109,12 @@ private extension OverviewViewController {
     titleView.pinToSafeArea(of: view, edges: [.left, .top, .right])
     
     view.addSubview(tableView)
-    tableView.pinToSafeArea(of: view, edges: [.bottom])
-    tableView.pinEdges(to: view, offsets: UIEdgeInsets(top: 0, left: margins.defaultSpacing, bottom: 0, right: 0),
-                       edges: [.left, .right])
+    tableView.pinToSafeArea(of: view,
+                            offsets: UIEdgeInsets(top: 0,
+                                                  left: margins.defaultSpacing,
+                                                  bottom: 0,
+                                                  right: 0),
+                            edges: [.bottom, .left, .right])
     tableView.topAnchor.constraint(equalTo: titleView.bottomAnchor).isActive = true
   }
   
