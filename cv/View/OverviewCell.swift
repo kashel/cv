@@ -42,5 +42,6 @@ final class OverviewCell: UITableViewCell {
     if viewModel.hasDetails {
       self.accessoryType = .disclosureIndicator
     }
+    isSetupFinished = true
   }
 }
