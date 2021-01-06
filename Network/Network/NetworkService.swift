@@ -1,14 +1,20 @@
 //
 //  NetworkService.swift
-//  cv
+//  Network
 //
-//  Created by Ireneusz Solek on 09/09/2019.
-//  Copyright © 2019 Ireneusz Solek. All rights reserved.
+//  Created by Ireneusz Solek on 04/01/2020.
+//  Copyright © 2020 Ireneusz Solek. All rights reserved.
 //
 
 import Foundation
 
-protocol NetworkService {
+public enum Result<T>{
+  case success(T)
+  case error(Error)
+}
+
+
+public protocol NetworkService {
   func get<T: Decodable>(url: URL, result: @escaping (Result<T>) -> ())
 }
 
@@ -20,8 +26,10 @@ enum NetworkError: Error {
   case emptyResponse
 }
 
-final class URLSessionNetworkService: NetworkService {
-  func get<T: Decodable>(url: URL, result: @escaping (Result<T>) -> ()) {
+public final class URLSessionNetworkService: NetworkService {
+  public init() {}
+  
+  public func get<T: Decodable>(url: URL, result: @escaping (Result<T>) -> ()) {
     let session = URLSession.shared
     let task = session.dataTask(with: url) { (data, response, error) in
       if let error = error {
@@ -49,3 +57,4 @@ final class URLSessionNetworkService: NetworkService {
     task.resume()
   }
 }
+

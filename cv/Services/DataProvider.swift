@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import DecodableNetworkLoader
 
 protocol DataProviderFactory {
   var dataProvider: DataProvider { get }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import DecodableNetworkLoader
 
 final class MockDataProvider: DataProvider {
   private let mockedData: CurriculumVitae

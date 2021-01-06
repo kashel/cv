@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3F3EF580232693A6001EB4AD /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EF57F232693A6001EB4AD /* MailService.swift */; };
-		3F3EF5822326C434001EB4AD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EF5812326C434001EB4AD /* NetworkService.swift */; };
-		3F3EF5842326CDC0001EB4AD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EF5832326CDC0001EB4AD /* Result.swift */; };
 		3F3EF5862326D1FF001EB4AD /* URLPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EF5852326D1FF001EB4AD /* URLPanel.swift */; };
 		3F3EF58A2326FBC1001EB4AD /* NetworkDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EF5892326FBC1001EB4AD /* NetworkDataProvider.swift */; };
 		3F577589232546B200C69A26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F577588232546B200C69A26 /* AppDelegate.swift */; };
@@ -47,6 +45,8 @@
 		3FA2D6A0232ED925007C63DD /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D69F232ED925007C63DD /* DependencyContainer.swift */; };
 		3FA2D6A3232EDCAA007C63DD /* OverviewViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D6A2232EDCAA007C63DD /* OverviewViewController+UITableViewDataSource.swift */; };
 		3FA2D6A5232EDDB6007C63DD /* OverviewViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2D6A4232EDDB6007C63DD /* OverviewViewController+UITableViewDelegate.swift */; };
+		97BB0C4925A61DA400CF40DC /* DecodableNetworkLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BB0C4825A61DA400CF40DC /* DecodableNetworkLoader.framework */; };
+		97BB0C4A25A61DA400CF40DC /* DecodableNetworkLoader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97BB0C4825A61DA400CF40DC /* DecodableNetworkLoader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +66,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		97BB0C4B25A61DA500CF40DC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				97BB0C4A25A61DA400CF40DC /* DecodableNetworkLoader.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3F3EF57F232693A6001EB4AD /* MailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
-		3F3EF5812326C434001EB4AD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		3F3EF5832326CDC0001EB4AD /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3F3EF5852326D1FF001EB4AD /* URLPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPanel.swift; sourceTree = "<group>"; };
 		3F3EF5892326FBC1001EB4AD /* NetworkDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataProvider.swift; sourceTree = "<group>"; };
 		3F577585232546B200C69A26 /* cv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cv.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +126,7 @@
 		3FA2D69F232ED925007C63DD /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		3FA2D6A2232EDCAA007C63DD /* OverviewViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		3FA2D6A4232EDDB6007C63DD /* OverviewViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverviewViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		97BB0C4825A61DA400CF40DC /* DecodableNetworkLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DecodableNetworkLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97BB0C4925A61DA400CF40DC /* DecodableNetworkLoader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +155,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F180F8023C1087900E9BB78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97BB0C4825A61DA400CF40DC /* DecodableNetworkLoader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3F57757C232546B200C69A26 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +170,7 @@
 				3F57759C232546B600C69A26 /* cvTests */,
 				3F5775A7232546B600C69A26 /* cvUITests */,
 				3F577586232546B200C69A26 /* Products */,
+				3F180F8023C1087900E9BB78 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,7 +227,6 @@
 			children = (
 				3F5775B723254BD900C69A26 /* CurriculumVitae.swift */,
 				3F5775C32325513E00C69A26 /* OverviewViewModelMapper.swift */,
-				3F3EF5832326CDC0001EB4AD /* Result.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,7 +251,6 @@
 				3F5775C62325546300C69A26 /* DataProvider.swift */,
 				3F5775C8232554C800C69A26 /* MockDataProvider.swift */,
 				3F3EF57F232693A6001EB4AD /* MailService.swift */,
-				3F3EF5812326C434001EB4AD /* NetworkService.swift */,
 				3F3EF5892326FBC1001EB4AD /* NetworkDataProvider.swift */,
 			);
 			path = Services;
@@ -306,6 +327,7 @@
 				3F577581232546B200C69A26 /* Sources */,
 				3F577582232546B200C69A26 /* Frameworks */,
 				3F577583232546B200C69A26 /* Resources */,
+				97BB0C4B25A61DA500CF40DC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -432,7 +454,6 @@
 			files = (
 				3FA2D6A0232ED925007C63DD /* DependencyContainer.swift in Sources */,
 				3FA2D69B232D9120007C63DD /* ProcessInfo+Payload.swift in Sources */,
-				3F3EF5822326C434001EB4AD /* NetworkService.swift in Sources */,
 				3F5775E02325699200C69A26 /* FontsPanel.swift in Sources */,
 				3F5775C42325513E00C69A26 /* OverviewViewModelMapper.swift in Sources */,
 				3F5775D223255B2C00C69A26 /* TitleValueCellRow.swift in Sources */,
@@ -446,7 +467,6 @@
 				3F5775CB232555C200C69A26 /* MockDependencyContainer.swift in Sources */,
 				3F57758B232546B200C69A26 /* OverviewViewController.swift in Sources */,
 				3F577589232546B200C69A26 /* AppDelegate.swift in Sources */,
-				3F3EF5842326CDC0001EB4AD /* Result.swift in Sources */,
 				3FA2D6A3232EDCAA007C63DD /* OverviewViewController+UITableViewDataSource.swift in Sources */,
 				3F5775BA23254D2800C69A26 /* OverviewViewController+ViewModel.swift in Sources */,
 				3F5775BC23254D9500C69A26 /* OverviewViewController+SectionOrder.swift in Sources */,

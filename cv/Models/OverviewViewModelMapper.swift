@@ -28,19 +28,20 @@ final class DefaultOverviewViewModelMapper: OverviewViewModelMapper {
                                accessibilityIdentifier: "personalInformatio.firstNameSurname")
     return Section(title: L10n.PersonalInformation.sectionTitle,
                    details: [Subsection(hasDetails: false,
-                                        rows: [firstNameSurname,
-                                               Row(title: L10n.PersonalInformation.phone,
-                                                   value: personalInformation.phone,
-                                                   accessibilityIdentifier: "personalInformation.phone"),
-                                               Row(title: L10n.PersonalInformation.email,
-                                                   value: personalInformation.email,
-                                                   accessibilityIdentifier: "personalInformation.email"),
-                                               Row(title: L10n.PersonalInformation.nationality,
-                                                   value: personalInformation.nationality,
-                                                   accessibilityIdentifier: "personalInformation.nationality"),
-                                               Row(title: L10n.PersonalInformation.dateOfBirth,
-                                                   value: personalInformation.dateOfBirth,
-                                                   accessibilityIdentifier: "personalInformation.dateOfBirth")])])
+                                        rows: [
+                                          firstNameSurname,
+                                          Row(title: L10n.PersonalInformation.phone,
+                                              value: personalInformation.phone,
+                                              accessibilityIdentifier: "personalInformation.phone"),
+                                          Row(title: L10n.PersonalInformation.email,
+                                              value: personalInformation.email,
+                                              accessibilityIdentifier: "personalInformation.email"),
+                                          Row(title: L10n.PersonalInformation.nationality,
+                                              value: personalInformation.nationality,
+                                              accessibilityIdentifier: "personalInformation.nationality"),
+                                          Row(title: L10n.PersonalInformation.dateOfBirth,
+                                              value: personalInformation.dateOfBirth,
+                                              accessibilityIdentifier: "personalInformation.dateOfBirth")])])
   }
   
   private func mapWorkExperience(_ workExperience: WorkExperience) -> Subsection {

@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import cv
+import DecodableNetworkLoader
 
 final class MockCVNetworkService: NetworkService {
   private let cv: CurriculumVitae
