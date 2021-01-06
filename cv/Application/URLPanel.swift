@@ -18,7 +18,7 @@ protocol URLPanel {
 
 struct NetworkURLPanel: URLPanel {
   var cv: URL {
-    let urlString = "https://gist.githubusercontent.com/kashel/5432d1b6de5b387a0be6ce21fb7359dc/raw/f675e1cb8a3b0da9bfc4e4c7506037308f198091/gistfile1.txt"
+    let urlString = "https://gist.githubusercontent.com/kashel/f15fe1b3a4534511b6841d7dcedc9bd8/raw/203701ae3d5573f47128cfe690f940908dee7e09/ireneusz_solek_2021.json"
     guard let url = URL(string: urlString) else {
       fatalError("Failed to construct url for network resource")
     }
